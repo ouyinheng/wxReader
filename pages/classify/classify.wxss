@@ -1,0 +1,28 @@
+.title {
+  display: block;
+  padding: 5px 5px 5px 20px;
+  font-size: 14px;
+  color: gray;
+  margin: 20px 10px;
+}
+.classify {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.classify .bookClsPar {
+  width:30%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.bookCls {
+  font-weight: 500;
+  font-size: 14px;
+}
+.classify .bookClsPar .clsNum {
+  font-size: 12px!important;
+  color: gray!important;
+}

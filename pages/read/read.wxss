@@ -1,0 +1,147 @@
+.section {
+  /* margin-bottom: 40px; */
+}
+
+.section .title {
+  width: 100%;
+  text-align: center;
+  font-weight: 800;
+}
+
+.section .content {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.section .content .content-sm {
+  font-size: 16px;
+  text-indent: 28px;
+  line-height: 40px;
+  font-family: -apple-system,
+                 BlinkMacSystemFont,
+                 "Segoe UI",
+                 Helvetica,
+                 Arial,
+                 sans-serif,
+                 "Apple Color Emoji",
+                 "Segoe UI Emoji",
+                 "Segoe UI Symbol";
+}
+
+.btnOp {
+  width: 100%;
+  height: 40px;
+  padding: 4px;
+  font-size: 14px;
+  margin: 5px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.btnOp .last, .btnOp .next {
+  font-size: 14px;
+}
+
+.footer {
+  width: 100%;
+  padding: 5px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: #000;
+  z-index: 10;
+}
+
+.footer .btn {
+  width: 20%;
+  font-size: 12px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.my-slide {
+  width: 100%;
+}
+
+.my-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.wxapp-modal {
+  float: left;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.wxapp-modal .left {
+  width: 80%;
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  flex: left;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.wxapp-modal .right {
+  width: 20%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.wxapp-modal .left>text {
+  display: block;
+  height: 20px;
+  line-height: 20px;
+  padding: 20px;
+  border-bottom: 1px solid gray;
+  clear: both;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.list-header {
+  width: 90%;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 10px;
+  background: #fff;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #bebebe;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.list-section {
+  margin-top: 50px;
+}

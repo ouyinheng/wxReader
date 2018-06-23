@@ -1,0 +1,49 @@
+<view>
+  <view class='header'>
+    <view class='left'>
+       <image style="width: 70px; height: 90px; background-color: #eeeeee;" mode="{{item.mode}}" src="https://statics.zhuishushenqi.com{{detail.cover}}"></image>
+    </view>
+    <view class='right'>
+      <text>{{detail.title}}</text>
+      <view class='title-sm'>
+        <text style="color: red;">{{detail.author}} </text>
+        <text> | </text>
+        <text> {{detail.majorCate}}</text>
+      </view>
+       <view class='title-sm'>
+        <text>{{detail.wordCount}}字 </text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='introduce'>
+  <view class='intro-det'>
+    <text>追书人气</text>
+    <text class='intro-num'>{{detail.latelyFollower}}</text>
+  </view>
+  <view class='intro-det'>
+    <text>读者留存</text>
+    <text class='intro-num'>{{detail.retentionRatio}}%</text>
+  </view>
+  <view class='intro-det'>
+    <text>社区帖子</text>
+    <text class='intro-num'>{{detail.postCount}}</text>
+  </view>
+  <view class='intro-det'>
+    <text>日更新字</text>
+    <text class='intro-num'>{{detail.serializeWordCount}}</text>
+  </view>
+</view>
+<view class='longIntro'>
+  <text class='title'>简介</text>
+  <text class='content'>{{detail.longIntro}}</text>
+</view>
+<view class='footer'>
+  <view class='btn' bindtap='addReadRack'>
+    <text class='iconfont icon-add addbook'></text>
+    <text>加入书架</text>
+  </view> 
+  <view class='btn' bindtap='toRead'>
+    <text class='read'>立即阅读</text>
+  </view>
+</view>

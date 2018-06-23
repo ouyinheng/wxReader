@@ -1,0 +1,16 @@
+@import "../../lib/css/iconfont.wxss";
+.section {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+}
+.section .list {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

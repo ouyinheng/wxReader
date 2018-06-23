@@ -1,0 +1,19 @@
+<view class="section">
+  <view class='font-lg pl-2 w-100 title'>{{answerTitle}}</view>
+  <form bindsubmit="bindFormSubmit" class='form'>
+    <!-- <textarea class='textarea' placeholder="form 中的 textarea" name="textarea" /> -->
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea class="weui-textarea" placeholder="添加回答(五个字以上)" style="height: 13.3em" />
+          <!-- <view class="weui-textarea-counter">0/200</view> -->
+        </view>
+      </view>
+    </view>
+    <view class='imgList'>
+      <image wx:for="{{tempFilePaths}}" wx:key="{{index}}" src="{{item}}"></image>
+    </view>
+    <icon type="success" size="40" bindtap='openCamara' wx:if="{{tempFilePaths.length<5}}"/>
+    <button class='submit mt-2 mr-2 cm-btn-primary,' form-type="submit"> 提交 </button>
+  </form>
+</view>

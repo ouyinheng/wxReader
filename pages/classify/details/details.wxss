@@ -1,0 +1,26 @@
+.booklist {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.booklist .left {
+  width: 20%;
+
+}
+.booklist .right {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.title-sm {
+  height: 20px;
+  font-size: 14px;
+  color:gray;
+  white-space: nowrap;  
+  text-overflow:ellipsis; 
+  overflow:hidden;
+}

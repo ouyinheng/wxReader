@@ -1,0 +1,54 @@
+<text class="title">男生</text>
+<view class='classify'>
+
+  <view class="page__bd">
+    <view class="weui-grids">
+      <block wx:for="{{classifyList.male}}" wx:for-item="item" wx:for-index="index" wx:key="index" class='bookClsPar'>
+        <view class="weui-grid" hover-class="weui-grid_active" bindtap="goDetails" data-params="{{item}}" data-cls="male">
+          <view class="bookCls" style="text-align:center;">{{item.name}}</view>
+          <view class="clsNum" style="font-size:14px;color:#d0d0d0;text-align:center;">{{item.bookCount}}本</view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+</view>
+<text class="title">女生</text>
+<view class='classify'>
+  <view class="page__bd">
+    <view class="weui-grids">
+      <block wx:for="{{classifyList.female}}" wx:for-item="item" wx:for-index="index" wx:key="index" class='bookClsPar'>
+        <view class="weui-grid" hover-class="weui-grid_active" bindtap="goDetails" data-params="{{item}}" data-cls="female">
+          <view class="bookCls" style="text-align:center;">{{item.name}}</view>
+          <view class="clsNum" style="font-size:14px;color:#d0d0d0;text-align:center;">{{item.bookCount}}本</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<!-- <text class="title">漫画</text>
+<view class='classify'>
+  <view class="page__bd">
+    <view class="weui-grids">
+      <block wx:for="{{classifyList.picture}}" wx:for-item="item" wx:for-index="index" wx:key="index" class='bookClsPar'>
+        <view class="weui-grid" hover-class="weui-grid_active" bindtap="goDetails" data-params="{{item}}" data-cls="picture">
+          <view class="bookCls" style="text-align:center;">{{item.name}}</view>
+          <view class="clsNum" style="font-size:14px;color:#d0d0d0;text-align:center;">{{item.bookCount}}本</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<text class="title">出版</text>
+<view class='classify'>
+  <view class="page__bd">
+    <view class="weui-grids">
+      <block wx:for="{{classifyList.press}}" wx:for-item="item" wx:for-index="index" wx:key="index" class='bookClsPar'>
+        <view class="weui-grid" hover-class="weui-grid_active" bindtap="goDetails" data-params="{{item}}" data-cls="press">
+          <view class="bookCls" style="text-align:center;">{{item.name}}</view>
+          <view class="clsNum" style="font-size:14px;color:#d0d0d0;text-align:center;">{{item.bookCount}}本</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view> -->

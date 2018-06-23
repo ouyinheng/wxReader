@@ -1,0 +1,21 @@
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell"  wx:for="{{bookList}}" wx:item="" wx:key="{{index}}" bindtap='toSee' data-id="{{item._id}}">
+      <view class="weui-cell__hd">
+          <image style="margin-right: 5px;vertical-align: middle;width:60px; height:80px;" mode="{{item.mode}}" src="https://statics.zhuishushenqi.com{{item.cover}}"></image>
+      </view>
+      <view class='my-col'>
+        <view class="weui-cell__bd" style="font-weight: 600;">{{item.title}}</view>
+        <view class="weui-cell__bd" style="font-size: 14px;padding: 5px 0;">{{item.author}} 著</view>
+        <view class='my-row' style="margin-rop: 10px;">
+          <view class="weui-cell__ft" style="width: 80%;height: 20px;text-align:left;font-size: 15px;overflow:hidden;">连载至: {{item.lastChapter}}</view>
+          <icon type="cancel" size="23" wx:if="{{isDel}}" catchtap='remove' data-id="{{item._id}}"></icon>
+        </view>
+      </view>
+  </view>
+</view>
+
+<view class="icon-box del" bindtap='showdel'>
+    <icon type="warn" size="50"></icon>
+    <view class="icon-box__ctn">
+    </view>
+</view>

@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/details/details",
+    "pages/search/search",
+    "pages/read/read",
+    "pages/classify/classify",
+    "pages/classify/details/details",
+    "pages/fx/fx",
+    "pages/fx/rankingList/rankingList",
+    "pages/handpick/handpick",
+    "pages/read/chaList/chaList"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTitleText": "zs",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "backgroundColor": "white",
+    "selectedColor": "#d81e06",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "lib/images/sj.png",
+        "selectedIconPath": "lib/images/sjred.png",
+        "text": "书架"
+      },
+      {
+        "pagePath": "pages/fx/rankingList/rankingList",
+        "iconPath": "lib/images/jx.png",
+        "selectedIconPath": "lib/images/jxred.png",
+        "text": "排行榜"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "iconPath": "lib/images/fl.png",
+        "selectedIconPath": "lib/images/flred.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "iconPath": "lib/images/ss.png",
+        "selectedIconPath": "lib/images/ssred.png",
+        "text": "搜索"
+      }
+    ]
+  }
+}

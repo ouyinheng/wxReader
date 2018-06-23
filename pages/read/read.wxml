@@ -1,0 +1,50 @@
+<view class='section' style="background:{{style.background}};color:{{style.color}}">
+  <view class='content' bindtap='showOp'>
+    <view wx:for="{{content}}" wx:key="{{index}}" class='content-sm'>
+      <view class='title' style="font-size: 22px;padding: 20px 0;">{{title[index]}}</view>
+      <view wx:for="{{item}}" wx:key="{{index}}" style="font-size:{{style.fontSize}}px">
+        <text>{{item}}。</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='footer' wx:if="{{footerBool}}">
+  <view class="my-slide page__bd page__bd_spacing" wx:if="{{!showSetup}}">
+    <slider show-value value="{{pro}}" />
+  </view>
+  <view class='my-row' wx:if="{{showSetup}}">
+    <text class='cx-btn-primary' bindtap='addSize'>Aa+</text>
+    <text class='cx-btn-primary' bindtap='delSize'>Aa-</text>
+  </view>
+  <view class='my-row' wx:if="{{!showSetup}}">
+    <view class='btn' bindtap='showCatalog'>
+      <text class='iconfont icon-category'></text>
+      <text>目录</text>
+    </view>
+    <view class='btn' bindtap='showSetup'>
+      <text class='iconfont icon-set'></text>
+      <text>设置</text>
+    </view>
+    <view class='btn' bindtap='tonight'>
+      <text class='iconfont icon-pic'></text>
+      <text>夜间模式</text>
+    </view>
+    <view class='btn' bindtap='setCache'>
+      <text class='iconfont icon-icondownload'></text>
+      <text>下载</text>
+    </view>
+  </view>
+</view>
+
+<view class="wxapp-modal" wx:if="{{modalBool}}">
+  <view class='list-header'>
+    <text>共{{bookInfo.mixToc.chapters.length}}章</text>
+    <text bindtap='reverse'>倒序</text>
+  </view>
+  <view class="weui-cells weui-cells_after-title list-section">
+    <view class="weui-cell" wx:for="{{bookInfo.mixToc.chapters}}" wx:key="{{index}}" data-index="{{index}}" bindtap='change'>
+      <view class="weui-cell__bd">{{item.title}}</view>
+    </view>
+  </view>
+</view>

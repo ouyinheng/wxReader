@@ -1,0 +1,20 @@
+.header {
+  width: 90%;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 10px;
+  background: #fff;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #bebebe;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.section {
+  margin-top: 50px;
+}
