@@ -57,7 +57,7 @@ Page({
   seeBookDet(event) {
     var id = event.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../../details/details?id=' + id
+      url: '/pages/details/details?id=' + id
     })
   },
   getList(id){

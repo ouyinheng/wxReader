@@ -6,9 +6,7 @@
     "pages/read/read",
     "pages/classify/classify",
     "pages/classify/details/details",
-    "pages/fx/fx",
-    "pages/fx/rankingList/rankingList",
-    "pages/handpick/handpick",
+    "pages/rankingList/rankingList",
     "pages/read/chaList/chaList"
   ],
   "window": {
@@ -30,7 +28,7 @@
         "text": "书架"
       },
       {
-        "pagePath": "pages/fx/rankingList/rankingList",
+        "pagePath": "pages/rankingList/rankingList",
         "iconPath": "lib/images/jx.png",
         "selectedIconPath": "lib/images/jxred.png",
         "text": "排行榜"

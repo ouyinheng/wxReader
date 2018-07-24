@@ -7,15 +7,16 @@ Page({
   data: {
     value:'',
     list:[],
-    bool:true,
     page:0,
     key:'',
-    nextlist:[],
     height:'',
-    limit:5,
+    limit:7,
     // weui
     inputShowed: false,
-    inputVal: ""
+    inputVal: "",
+    hasnext: true,
+    canload:true,
+    isLoadmore:false
   },
 
   /**
@@ -41,59 +42,60 @@ Page({
     this.setData({
       key: _this.data.inputVal
     })
-    var url = `https://api.zhuishushenqi.com/book/fuzzy-search?query=${key}&start=${page}&limit=5`
+    var url = `https://api.zhuishushenqi.com/book/fuzzy-search?query=${key}&start=${page}&limit=10`
     wx.request({
       url: url,
       success: function (res) {
         _this.setData({
-          bool: res.data.ok,
-          list: res.data.books
+          hasnext: res.data.ok,
+          list: res.data.books,
         })
         _this.cancelLoading();
       }
     })
   },
-  lower() {
-    this.showLoading();
-    const _this = this;
-    var key = _this.data.key;
-    var page = _this.data.page + 1;
-    var limit = this.data.limit+5
-    _this.setData({
-      page: page + 1,
-      limit: limit + 5
+  loadmore() {
+    var that = this;
+    var page = this.data.page+7;
+    var limit = this.data.limit;
+    var key = this.data.inputVal;
+    this.setData({
+      page:page,
+      limit: limit,
+      isLoadmore:true
     })
     var url = `https://api.zhuishushenqi.com/book/fuzzy-search?query=${key}&start=${page}&limit=${limit}`
-    wx.request({
-      url: url,
-      success: function (res) {
-        _this.setData({
-          bool: res.data.ok,
-          nextlist: res.data.books
+    if(this.data.canload){
+      this.setData({
+        canload:false
+      })
+      if(this.data.hasnext){
+        wx.request({
+          url: url,
+          success: function (res) {
+            var arr = that.data.list;
+            arr = arr.concat(res.data.books)
+            that.setData({
+              list: arr,
+              isLoadmore: false,
+              canload:true
+            })
+          }
         })
-        _this.cancelLoading();
-        var result = _this.data.list;
-        var resArr = res.data.books
-        var cont = result.concat(resArr);
-        if (!_this.data.bool) {
-          wx.showToast({ //如果全部加载完成了也弹一个框
-            title: '我也是有底线的',
-            icon: 'success',
-            duration: 300
-          });
-          return false;
-        } else {
-          _this.showLoading();
-          _this.setData({
-            list: res.data.books
-          });
-          _this.showLoading();
-        }
+      } else {
+        that.setData({
+          isLoadmore: false,
+          canload: true
+        })
       }
-    })
+    } else {
+      that.setData({
+        isLoadmore: false
+      })
+    }
   }, 
   seeBookDet:function(e){
-    var id = e.currentTarget.dataset.id;
+    var id = event.detail;
     wx.navigateTo({
       url: '../details/details?id=' + id
     })

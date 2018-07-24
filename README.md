@@ -12,4 +12,17 @@
 - [ ] 换源
 
 ### 部分截图
-![image](./lib/readme/home)
+### 1. 书架
+<img src="./lib/readme/home.png" alt="书架">
+### 2. 排行榜
+<img src="./lib/readme/phb.png" alt="排行榜">
+### 3. 分类
+<img src="./lib/readme/classify.png" alt="分类">
+### 4. 搜索
+<img src="./lib/readme/search.png" alt="搜索">
+### 5. 详情
+<img src="./lib/readme/details.png" alt="详情">
+### 6. 具体内容
+<img src="./lib/readme/content.png" alt="具体内容">
+### 7. 章节目录
+<img src="./lib/readme/menu.png" alt="章节目录">

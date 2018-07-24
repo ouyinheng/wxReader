@@ -1,4 +1,7 @@
-<view class="weui-cells weui-cells_after-title">
+<view wx:if="{{bookList.length==0}}" style="width: 100%;height: 00%；">
+  <image src='/lib/images/noMessage.png' style="display: block;width: 280px;margin: 100px auto;"></image>
+</view>
+<view class="weui-cells weui-cells_after-title" wx:if="{{bookList.length>0}}">
   <view class="weui-cell"  wx:for="{{bookList}}" wx:item="" wx:key="{{index}}" bindtap='toSee' data-id="{{item._id}}">
       <view class="weui-cell__hd">
           <image style="margin-right: 5px;vertical-align: middle;width:60px; height:80px;" mode="{{item.mode}}" src="https://statics.zhuishushenqi.com{{item.cover}}"></image>
@@ -14,7 +17,7 @@
   </view>
 </view>
 
-<view class="icon-box del" bindtap='showdel'>
+<view class="icon-box del" bindtap='showdel' wx:if="{{bookList.length>0}}">
     <icon type="warn" size="50"></icon>
     <view class="icon-box__ctn">
     </view>

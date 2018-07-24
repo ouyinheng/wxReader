@@ -1,28 +1,28 @@
-.title {
-  display: block;
-  padding: 5px 5px 5px 20px;
-  font-size: 14px;
-  color: gray;
-  margin: 20px 10px;
-}
 .classify {
   width: 100%;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px 0;
 }
-.classify .bookClsPar {
-  width:30%;
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
+.title {
+  margin-left: 10px;
+  border-left: 5px solid red;
+  padding: 0 10px ;
+}
+.card {
+  width: 40%;
+  padding: 10px;
+  box-shadow: 0 0 10px gainsboro;
   text-align: center;
+  margin: 5px 0;
+  
 }
-.bookCls {
-  font-weight: 500;
+.count {
+  color: gainsboro;
   font-size: 14px;
 }
-.classify .bookClsPar .clsNum {
-  font-size: 12px!important;
-  color: gray!important;
+.card:active {
+  box-shadow: 0 0 3px gainsboro;
+  color: red;
 }
