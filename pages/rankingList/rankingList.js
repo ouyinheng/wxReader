@@ -12,14 +12,15 @@ Page({
     currentTab: 0,
     playIndex: 0,
     tab: 0,
-    titlenum:0
+    titlenum:0,
+    loading:true,
+    loadshow:true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.showLoading();
     wx.setNavigationBarTitle({
       title: '排行榜'//页面标题为路由参数
     })
@@ -39,9 +40,14 @@ Page({
       url: listUrl,
       success: function (res) {
         _this.setData({
-          bookList: res.data.ranking.books
+          bookList: res.data.ranking.books,
+          loading:false
         })
-        _this.cancelLoading();
+        setTimeout(_=>{
+          _this.setData({
+            loadshow:false
+          },1000)
+        })
       }
     })
   },

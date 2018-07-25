@@ -1,0 +1,40 @@
+.header {
+  width: 100%;
+  height:60px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 2px 10px;
+}
+.left {
+  width: 60px;
+}
+.left .icon {
+  width: 50px;
+  height:50px;
+  border: 1rpx solid gainsboro;
+  border-radius: 50%;
+  background: white;
+}
+.right {
+  width: 100%;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 14px;
+}
+.right text {
+  text-align: left;
+}
+.login {
+  display: block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: white;
+  font-size:14px;
+  color: black;
+  border: none;
+}

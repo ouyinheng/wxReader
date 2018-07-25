@@ -95,7 +95,8 @@ Page({
     }
   }, 
   seeBookDet:function(e){
-    var id = event.detail;
+    var id = e.detail;
+    console.log(id)
     wx.navigateTo({
       url: '../details/details?id=' + id
     })

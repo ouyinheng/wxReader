@@ -6,7 +6,9 @@ Page({
    */
   data: {
     bookId:0,
-    chapters:[]
+    chapters: [],
+    loading: true,
+    loadshow: true
   },
 
   /**
@@ -23,8 +25,14 @@ Page({
       url: url,
       success(res){
         _this.setData({
-          chapters: res.data.mixToc.chapters
+          chapters: res.data.mixToc.chapters,
+          loading:false
         })
+        setTimeout(_ => {
+          _this.setData({
+            loadshow: false
+          })
+        }, 1000)
       }
     })
   },

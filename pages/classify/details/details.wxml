@@ -5,3 +5,6 @@
   bindseeBookDet="seeBookDet"
   cls="{{false}}"
 ></scroll>
+<view class='loading {{loading?"":"cancel"}}' wx:if="{{loadshow}}">
+  <image src='/lib/images/spin2.svg'></image>
+</view>

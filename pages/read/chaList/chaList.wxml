@@ -7,3 +7,6 @@
     <view class="weui-cell__bd">{{item.title}}</view>
   </view>
 </view>
+<view class='loading {{loading?"":"cancel"}}' wx:if="{{loadshow}}">
+  <image src='/lib/images/spin2.svg'></image>
+</view>

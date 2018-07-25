@@ -9,7 +9,9 @@ Page({
     limit:10,
     isLoadmore:false,
     canload:true,
-    hasnext: true
+    hasnext: true,
+    loading: true,
+    loadshow: true
   },
 
   onLoad: function (options) {
@@ -20,15 +22,19 @@ Page({
     var par = options.param
     var cls = options.cls
     var url = `https://api.zhuishushenqi.com/book/by-categories?gender=${cls}&type=hot&major=${par}&minor=&start=0&limit=10`
-    this.showLoading()
     wx.request({
       url: url,
       success: function (res) {
-        _this.cancelLoading();
         _this.setData({
           booklist: res.data.books,
-          bool:res.data.ok
+          bool:res.data.ok,
+          loading:false
         })
+        setTimeout(_ => {
+          _this.setData({
+            loadshow: false
+          })
+        }, 1000)
       }
     })
     wx.getSystemInfo({
@@ -40,7 +46,6 @@ Page({
     })
   },
   loadmore() {
-    console.log('asdf')
     var that = this;
     var page = this.data.page + 10;
     var limit = this.data.limit;
@@ -61,11 +66,13 @@ Page({
           success: function (res) {
             var arr = that.data.booklist;
             arr = arr.concat(res.data.books)
-            that.setData({
-              booklist: arr,
-              isLoadmore: false,
-              canload: true
-            })
+            setTimeout(function(){
+              that.setData({
+                booklist: arr,
+                isLoadmore: false,
+                canload: true
+              })
+            },500)
           }
         })
       } else {

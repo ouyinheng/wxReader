@@ -14,7 +14,9 @@ Page({
       color: '#000',//字体颜色
       background: "#fff",//背景
       fontSize: 16
-    }
+    },
+    loading: true,
+    loadshow: true
   },
   onLoad: function (options) {
     var that = this;
@@ -38,8 +40,14 @@ Page({
       url: url,
       success(req) {
         that.setData({
-          bookInfo: req.data
+          bookInfo: req.data,
+          loading:false
         })
+        setTimeout(_ => {
+          that.setData({
+            loadshow: false
+          })
+        }, 1000)
         that.getContent();
       }
     })
@@ -51,7 +59,6 @@ Page({
   },
   //获取章节内容,改变linknum就能跳转
   getContent() {
-    this.showLoading();
     const that = this;
     var bookId = this.data.bookId;
     var linknum = this.data.linknum;
@@ -80,7 +87,6 @@ Page({
           },
         })
         that.getProcess()
-        that.cancelLoading();
       }
     })
   },

@@ -7,7 +7,9 @@ Page({
   data: {
     bookList: [],
     detailsList: [],
-    isDel: false
+    isDel: false,
+    loading: true,
+    loadshow: true
   },
   /**
    * 生命周期函数--监听页面加载
@@ -18,22 +20,29 @@ Page({
     })
   },
   onShow: function () {
+    this.setData({
+      loading: false
+    })
     this.getBookList();
+    setTimeout(_ => {
+      this.setData({
+        loadshow: false
+      })
+    }, 1000)
   },
   getBookList(){
     const _this = this;
-    this.showLoading();
     wx.getStorage({
       key: 'books',
       success: function (res) {
         _this.setData({
           bookList: res.data
         })
-        _this.cancelLoading();
       }
     })
   },
   getDetail(name) {
+    this.loading();
     const _this = this;
     var url = `https://api.zhuishushenqi.com/book/fuzzy-search?query=${name}&start=0&limit=1`
     wx.request({
@@ -42,18 +51,15 @@ Page({
         _this.setData({
           detailsList: res.data
         })
-        _this.cancelLoading();
       }
     })
   },
   toSee(e) {
-    this.showLoading();
     var id = e.currentTarget.dataset.id;
     const _this = this;
     wx.navigateTo({
       url: '../read/read?id=' + id
     })
-    // this.cancelLoading();
   },
   remove: function (e) {
     const _this = this;
@@ -86,14 +92,5 @@ Page({
     this.setData({
       isDel: !this.data.isDel
     })
-  },
-  showLoading: function () {
-    wx.showToast({
-      title: '加载中',
-      icon: 'loading'
-    });
-  },
-  cancelLoading: function () {
-    wx.hideToast();
   }
 })

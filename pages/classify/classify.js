@@ -1,10 +1,11 @@
 // pages/fx/classify/classify.js
 Page({
   data: {
-    classifyList:'123'
+    classifyList: '123',
+    loading: true,
+    loadshow: true
   },
   onLoad: function (options) {
-    this.showLoading()
     wx.setNavigationBarTitle({
       title: '分类'//页面标题为路由参数
     })
@@ -12,11 +13,16 @@ Page({
     wx.request({
       url: "https://api.zhuishushenqi.com/cats/lv2/statistics",
       success: function (res) {
-        console.log(res.data)
         _this.cancelLoading();
         _this.setData({
-          classifyList:res.data
+          classifyList:res.data,
+          loading:false
         })
+        setTimeout(_=>{
+          _this.setData({
+            loadshow:false
+          })
+        },1000)
       }
     })
   },

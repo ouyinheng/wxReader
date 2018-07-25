@@ -6,7 +6,9 @@ Page({
    */
   data: {
     bookId: 0,
-    detail: ''
+    detail: '',
+    loading: true,
+    loadshow: true
   },
 
   /**
@@ -21,16 +23,20 @@ Page({
     this.setData({
       bookId: options.id
     })
-    this.showLoading();
     // api.zhuishushenqi.com / book / 书籍id(_id)
     var url = "https://api.zhuishushenqi.com/book/" + bookId;
     wx.request({
       url: url,
       success: function (res) {
-        _this.cancelLoading();
         _this.setData({
-          detail: res.data
+          detail: res.data,
+          loading:false
         })
+        setTimeout(_ => {
+          _this.setData({
+            loadshow: false
+          })
+        }, 1000)
       }
     })
   },
