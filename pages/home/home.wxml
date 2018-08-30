@@ -1,4 +1,4 @@
-<view wx:if="{{bookList.length==0}}" style="width: 100%;height: 00%；">
+<view wx:if="{{noBook}}" style="width: 100%;height: calc(100vh)；"  bindtap='refresh'>
   <image src='/lib/images/noMessage.png' style="display: block;width: 280px;margin: 100px auto;"></image>
 </view>
 <view class="weui-cells weui-cells_after-title" wx:if="{{bookList.length>0}}">
@@ -18,10 +18,6 @@
 </view>
 
 <view class="icon-box del" bindtap='showdel' wx:if="{{bookList.length>0}}">
-    <icon type="warn" size="50"></icon>
-    <view class="icon-box__ctn">
-    </view>
+    <view class='iconfont icon-shezhi setup'></view>
 </view>
-<view class='loading {{loading?"":"cancel"}}' wx:if="{{loadshow}}">
-  <image src='/lib/images/spin2.svg'></image>
-</view>
+<loading loading="{{loading}}" wx:if="{{loadshow}}"></loading>

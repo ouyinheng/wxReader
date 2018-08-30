@@ -1,0 +1,3 @@
+<view class='loading {{loading?"":"cancel"}}'>
+  <image src='/lib/images/spin2.svg'></image>
+</view>

@@ -6,9 +6,6 @@ Page({
     loadshow: true
   },
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: '分类'//页面标题为路由参数
-    })
     const _this = this;
     wx.request({
       url: "https://api.zhuishushenqi.com/cats/lv2/statistics",
