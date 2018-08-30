@@ -35,6 +35,7 @@ Component({
    */
   methods: {
     loadmore:function(){
+      console.log('asdf')
       this.triggerEvent('loadmore')
     },
     seeBookDet:function(e){

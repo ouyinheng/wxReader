@@ -1,6 +1,7 @@
 /**app.wxss**/
 @import "lib/css/iconfont.wxss";
 @import 'style/weui.wxss';
+@import 'style/iconfont.wxss';
 .dx-icon {
   background-image: url("lib/svg/dx.svg")
 }
@@ -68,5 +69,5 @@
   transition: all 1s;
 }
 .cancel {
-  opacity: 0;
+  display: none;
 }
