@@ -61,7 +61,8 @@ Page({
   getInfo(item){
     console.log(item)
     this.setData({
-      info:item
+      info:item,
+      isLogin:true
     })
     wx.setStorageSync('isLogin', true)
     wx.setStorageSync('info', item)
