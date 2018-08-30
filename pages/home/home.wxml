@@ -1,5 +1,5 @@
 <view wx:if="{{noBook}}" style="width: 100%;height: calc(100vh)；"  bindtap='refresh'>
-  <image src='/lib/images/noMessage.png' style="display: block;width: 280px;margin: 100px auto;"></image>
+  <image src='/lib/images/noMessage.png' style="display: block;width: 200px;margin: 100px auto;" mode="aspectFit"></image>
 </view>
 <view class="weui-cells weui-cells_after-title" wx:if="{{bookList.length>0}}">
   <view class="weui-cell"  wx:for="{{bookList}}" wx:item="" wx:key="{{index}}" bindtap='toSee' data-id="{{item._id}}">

@@ -1,0 +1,21 @@
+/* components/btn/btn.wxss */
+@import '/style/iconfont.wxss';
+.outbtn {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-around;
+}
+.loadmore {
+  width: 60px;
+  height: 20px;
+  padding: 3px 10px;
+  display: flex;
+  align-items: center;
+  border: 1px solid gainsboro;
+  border-radius: 20px;
+}
+.loadmore text {
+  font-size:12px;
+  color: gray;
+}

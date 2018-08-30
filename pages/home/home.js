@@ -89,7 +89,8 @@ Page({
   refresh:function(){
     this.setData({
       noBook: false,
-      loading: true
+      loading: true,
+      loadshow: true
     })
     this.onShow()
   }
