@@ -20,10 +20,11 @@
   <view class='box'>
     <scroll
       list="{{list}}"
-      isLoadmore="{{isLoadmore}}"
+      isLoadmore="{{getListData}}"
       bindloadmore="loadmore"
       bindseeBookDet="seeBookDet"
       cls="{{true}}"
+      showLoad="{{showLoad}}"
     ></scroll>
   </view>
 </view>

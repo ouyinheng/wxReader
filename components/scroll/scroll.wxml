@@ -2,7 +2,7 @@
   <view class="booklist" wx:for="{{list}}" wx:key="{{index}}" bindtap='seeBookDet' data-id="{{item._id}}">
       <view class="list-item" hover-class="weui-cell_active">
           <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-              <image class="list-img" src="https://statics.zhuishushenqi.com{{item.cover}}" />
+              <image class="list-img" src="https://statics.zhuishushenqi.com{{item.cover}}" mode="aspectFit"/>
           </view>
           <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
               <view class="my-title">{{item.title}}</view>
@@ -13,7 +13,7 @@
           </view>
       </view>
   </view>
-  <btn class="btn" bindloadmore="loadmore" wx:if="{{!isLoadmore}}"></btn>
+  <btn class="btn" bindloadmore="loadmore" wx:if="{{!isLoadmore && showLoad}}"></btn>
   <view class='loading' wx:if="{{isLoadmore}}">
     <image style="width: 100px;height: 100px;margin:0 auto;" mode="aspectFit" src="/lib/images/spin2.svg"></image>
   </view>

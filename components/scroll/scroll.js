@@ -20,6 +20,10 @@ Component({
       type:Boolean,
       value:false,
       observer:function(){}
+    },
+    showLoad:{
+      type: Boolean,
+      value: true
     }
   },
 
