@@ -10,7 +10,7 @@ Page({
   },
   onShow: function () {
     this.setData({
-      loading: true
+      loading: false
     })
     this.getBookList();
   },
@@ -38,6 +38,10 @@ Page({
           })
         },1000)
       }
+     
+    })
+    this.setData({
+      loading: false
     })
   },
   getDetail(name) {
