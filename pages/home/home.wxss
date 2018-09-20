@@ -1,36 +1,59 @@
-.section {
-  width: 95%;
-  margin: 0 auto;
-}
-.section .book {
-  width: 30%;
-  margin: 1%;
-  float: left;
-  font-size: 14px;
-  text-align: center;
-}
-.icon {
-  width: 100%; 
-  height: 130px; 
-  background-color: #eeeeee;
-}
-.title {
-  overflow: hidden;
-  text-overflow:ellipsis;
-  white-space: nowrap;
-}
-.addbook {
-  width: 100%; 
-  height: 130px; 
-  background-color: #eeeeee;
-}
 .del {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  
 }
 .setup {
   font-size: 30px;
   color: red;
+}
+.book-cover {
+
+}
+.book-cover image {
+  width:60px;
+  height:80px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.book-intro {
+  width: 100%;
+}
+.book-intro .book-title {
+  width: 75%;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.book-intro .book-anthor {
+  width: 80%;
+  height: 20px;
+  padding: 5px 0;
+  margin-top: 10px;
+  font-size: 14px;
+  color: gray;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.book-intro .book-list{
+  width: 80%;
+  height: 20px;
+  text-align:left;
+  font-size: 15px;
+  color: gray;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.book-item {
+  position: relative;
+}
+.book-item .del {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 0);
 }
