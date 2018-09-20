@@ -7,8 +7,7 @@
     "pages/classify/classify",
     "pages/classify/details/details",
     "pages/rankingList/rankingList",
-    "pages/read/chaList/chaList",
-    "pages/mine/mine"
+    "pages/read/chaList/chaList"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -45,12 +44,6 @@
         "iconPath": "lib/images/ss.png",
         "selectedIconPath": "lib/images/ssred.png",
         "text": "搜索"
-      },
-      {
-        "pagePath": "pages/mine/mine",
-        "iconPath": "lib/images/mine.png",
-        "selectedIconPath": "lib/images/minered.png",
-        "text": "我的"
       }
     ]
   }

@@ -1,4 +1,5 @@
 {
+    "navigationBarTitleText":"搜索",
     "usingComponents": {
       "scroll": "/components/scroll/scroll"
     }

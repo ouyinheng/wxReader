@@ -8,84 +8,42 @@ Page({
     page:0,
     limit:10,
     isLoadmore:false,
-    canload:true,
     hasnext: true,
     loading: true,
     loadshow: true
   },
 
   onLoad: function (options) {
-    const _this = this;
     this.setData({
       param: options.param
     })
-    var par = options.param
-    var cls = options.cls
-    var url = `https://api.zhuishushenqi.com/book/by-categories?gender=${cls}&type=hot&major=${par}&minor=&start=0&limit=10`
-    wx.request({
-      url: url,
-      success: function (res) {
-        _this.setData({
-          booklist: res.data.books,
-          bool:res.data.ok,
-          loading:false
-        })
-        setTimeout(_ => {
-          _this.setData({
-            loadshow: false
-          })
-        }, 1000)
-      }
-    })
-    wx.getSystemInfo({
-      success: (res) => {
-        this.setData({
-          height: res.windowHeight
-        })
-      }
-    })
+    this.loadmore();
   },
   loadmore() {
-    var that = this;
-    var page = this.data.page + 10;
-    var limit = this.data.limit;
-    var param = this.data.param;
+    let that = this;
+    let { page, limit, param } = this.data;
     this.setData({
       page: page,
       limit: limit,
       isLoadmore: true
     })
-    var url = `https://api.zhuishushenqi.com/book/by-categories?gender=male&type=hot&major=${param}&minor=&start=${page}&limit=10`;
-    if (this.data.canload) {
-      this.setData({
-        canload: false
-      })
       if (this.data.hasnext) {
+        let url = `https://api.zhuishushenqi.com/book/by-categories?gender=male&type=hot&major=${param}&minor=&start=${page}&limit=10`;
         wx.request({
           url: url,
           success: function (res) {
-            var arr = that.data.booklist;
-            arr = arr.concat(res.data.books)
-            setTimeout(function(){
-              that.setData({
-                booklist: arr,
-                isLoadmore: false,
-                canload: true
-              })
-            },500)
+            let arr = that.data.booklist;
+            arr.push(...res.data.books)
+            that.setData({
+              page: page+10,
+              booklist: arr,
+              isLoadmore: false,
+              canload: true,
+              loadshow: false
+            })
           }
         })
-      } else {
-        that.setData({
-          isLoadmore: false,
-          canload: true
-        })
       }
-    } else {
-      that.setData({
-        isLoadmore: false
-      })
-    }
   },
   seeBookDet(event){
     var id = event.detail;
@@ -95,11 +53,8 @@ Page({
   },
   showLoading: function () {
     wx.showToast({
-      title: '加载中',
+      title: '加载中...',
       icon: 'loading'
     });
-  },
-  cancelLoading: function () {
-    wx.hideToast();
   }
 })
