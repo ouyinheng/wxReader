@@ -1,36 +1,94 @@
-.section {
-  width: 95%;
-  margin: 0 auto;
-}
-.section .book {
-  width: 30%;
-  margin: 1%;
-  float: left;
-  font-size: 14px;
-  text-align: center;
-}
-.icon {
-  width: 100%; 
-  height: 130px; 
-  background-color: #eeeeee;
-}
-.title {
-  overflow: hidden;
-  text-overflow:ellipsis;
-  white-space: nowrap;
-}
-.addbook {
-  width: 100%; 
-  height: 130px; 
-  background-color: #eeeeee;
-}
 .del {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  
 }
 .setup {
   font-size: 30px;
   color: red;
+}
+.book-group {
+  width: 100%;
+  height: calc(100vh);
+}
+.book-group-item {
+  position: relative;
+}
+.book-group-item:before{
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  border-bottom: 1px solid gainsboro;
+  transform-origin: 0 0;
+  transform: scale(0.5, 0.5);
+  box-sizing: border-box;
+}
+.book-item {
+  display: inline-block;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.book-cover {
+  width: 20%;
+  /* padding: 0 10px; */
+}
+.book-cover image {
+  width:55px;
+  height:70px;
+  vertical-align: middle;
+}
+.book-intro {
+  width: 75%;
+  height: 60px;
+}
+.book-intro .book-title {
+  width: 100%;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.book-intro .book-anthor {
+  width: 100%;
+  height: 20px;
+  /* padding: 5px 0; */
+  font-size: 14px;
+  color: gray;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.book-intro .book-list{
+  width: 100%;
+  text-align:left;
+  font-size: 15px;
+  color: gray;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.book-item {
+  position: relative;
+}
+.book-item .del {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 0);
+}
+
+.right-del {
+  width: 80px;
+  height: 70px;
+  position: absolute;
+  right: -80px;
+  top: 0;
+  background: RGB(226,25,24);
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  font-size: 16px;
 }
