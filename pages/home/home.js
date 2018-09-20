@@ -6,7 +6,12 @@ Page({
     isDel: false,
     loading: true,
     noBook: true,
-    loadshow: true
+    loadshow: true,
+    start: 0,
+    move: 0,
+    end: 0,
+    distance: 0,
+    ind: ''
   },
   onShow: function () {
     this.setData({
@@ -20,23 +25,10 @@ Page({
       key: 'books',
       success: function (res) {
         if(res.data.length>0){
-          _this.setData({
-            bookList: res.data,
-            noBook: false,
-            loading: false
-          })
+          _this.setData({ bookList: res.data, noBook: false, loading: false, loadshow: false })
         } else {
-          _this.setData({
-            bookList: res.data,
-            noBook: true,
-            loading: false
-          })
+          _this.setData({ bookList: res.data, noBook: true, loading: false, loadshow: false })
         }
-        setTimeout(_=>{
-          _this.setData({
-            loadshow: false
-          })
-        },1000)
       }
     })
   },
@@ -58,6 +50,32 @@ Page({
       url: '../read/read?id=' + id
     })
   },
+  delstart(e) {
+    let start = e.changedTouches[0].clientX;
+    let index = e.currentTarget.dataset.index;
+    this.setData({start,ind: index, distance: 0})
+  },
+  delmove(e){
+    let move = e.changedTouches[0].clientX;
+    let distance = move-this.data.start;
+    if(distance<=-80){
+      distance = -80
+    } else if(distance>=0) {
+      distance = 0
+    }
+    this.setData({move, distance})
+  },
+  delend(e) {
+    let end = e.changedTouches[0].clientX;
+    let distance = end-this.data.start;
+    if(distance<=-20){
+      distance = -80
+    } else {
+      distance = 0
+    }
+    this.setData({end, distance})
+
+  },
   remove: function (e) {
     const _this = this;
     var id = e.currentTarget.dataset.id;
@@ -65,21 +83,16 @@ Page({
     let arr = list.filter((item,index)=>{
       return item._id != id;
     })
-    wx.showModal({
-      title: '确定删除吗',
-      confirmText: "确认",
-      cancelText: "取消",
-      success: function (res) {
-        if (res.confirm) {
-          wx.setStorage({
-            key: "books",
-            data: arr
-          })
-          _this.getBookList();
-        } else {
-        }
-      }
-    });
+    wx.setStorage({
+      key: "books",
+      data: arr
+    })
+    _this.getBookList();
+  },
+  setind(){
+    this.setData({
+      distance: 0
+    })
   },
   showdel:function() {
     this.setData({
