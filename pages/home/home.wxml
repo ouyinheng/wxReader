@@ -1,5 +1,5 @@
 <view wx:if="{{noBook}}" style="width: 100%;height: calc(100vh)；"  bindtap='refresh'>
-  <image src='/lib/images/noMessage.png' style="display: block;width: 200px;margin: 100px auto;" mode="aspectFit"></image>
+  <image src='/lib/images/noBook.png' style="display: block;width: 200px;margin: 100px auto;" mode="aspectFit"></image>
 </view>
 <view class="book-group" wx:if="{{bookList.length>0}}" bindtouchstart="setind">
   <view class="book-group-item" wx:for="{{bookList}}" wx:item="" wx:key="{{index}}" bindtap='toSee' data-id="{{item._id}}" data-index="{{index}}" bindtouchstart="delstart" bindtouchmove="delmove" bindtouchend="delend">
