@@ -13,6 +13,8 @@
 }
 .book-group-item {
   position: relative;
+  padding: 10px 0 10px;
+  margin-bottom: 10px;
 }
 .book-group-item:before{
   content: '';
@@ -91,4 +93,5 @@
   line-height: 70px;
   text-align: center;
   font-size: 16px;
+  padding: 10px 0 20px;
 }

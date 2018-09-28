@@ -51,7 +51,7 @@ Page({
   toSee(e) {
     var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../read/read?id=' + id
+      url: '../reader/reader?id=' + id
     })
   },
   delstart(e) {
@@ -89,7 +89,8 @@ Page({
     })
     wx.setStorage({
       key: "books",
-      data: arr
+      data: arr,
+      ind: ''
     })
     _this.getBookList();
   },

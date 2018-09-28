@@ -1,0 +1,8 @@
+<view class='outer'  bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend">
+  <view class='top'></view>
+  <view class='cr' style="transform: translateX({{distance}}px)">
+    <view class='center'></view>
+    <view class='right'></view>
+  </view>
+  <view class='bottom'></view>
+</view>

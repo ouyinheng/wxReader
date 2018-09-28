@@ -1,0 +1,31 @@
+.outer {
+  width: 100%;
+  height: calc(100vh);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.top {
+  width: 100%;
+  height: calc(100vh);
+  background-color: lightblue;
+}
+.cr {
+  display: flex;
+  transform: translateX(-100px)
+}
+.center {
+  min-width: 100%;
+  height: calc(100vh);
+  background-color: lightyellow;
+}
+.right {
+  min-width: 100%;
+  height: calc(100vh);
+  background-color: lightgreen;
+}
+.bottom {
+  width: 100%;
+  height: calc(100vh);
+  background-color: lightpink;
+}
