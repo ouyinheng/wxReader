@@ -1,0 +1,11 @@
+<!--components/list/list.wxml-->
+<view class="o-list" bindtap="toRead">
+  <view>
+    <image class="cover" src="https://statics.zhuishushenqi.com{{list.cover}}"></image>
+  </view>
+  <view class="o-intro">
+    <p class="title">{{list.title}}</p>
+    <p class="author">{{list.author}}</p>
+    <p class="lastChapter">{{list.lastChapter}}</p>
+  </view>
+</view>

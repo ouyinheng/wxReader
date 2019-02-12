@@ -1,0 +1,11 @@
+<!--components/oloading.wxml-->
+<view class='o-loading' wx:if="{{loading}}">
+  <view class='loading-group'>
+    <view class='span'></view>
+    <view class='span'></view>
+    <view class='span'></view>
+    <view class='span'></view>
+    <view class='span'></view>
+    <view class='span'></view>
+  </view>
+</view>

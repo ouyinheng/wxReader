@@ -21,9 +21,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: '排行榜'//页面标题为路由参数
-    })
+    // wx.setNavigationBarTitle({
+    //   title: '排行榜'//页面标题为路由参数
+    // })
     const _this = this;
     var url = `https://api.zhuishushenqi.com/ranking/gender`;
     wx.request({
@@ -92,13 +92,14 @@ Page({
       this.getList('54d43437d47d13ff21cad58b')
     }
   },
-  showLoading: function () {
-    wx.showToast({
-      title: '加载中',
-      icon: 'loading'
-    });
+  showLoading() {
+    this.setData({
+      loading: true
+    })
   },
-  cancelLoading: function () {
-    wx.hideToast();
+  cancelLoading () {
+    this.setData({
+      loading: false
+    })
   }
 })

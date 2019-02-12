@@ -1,15 +1,23 @@
-<text class="title">男生</text>
-<view class='classify'>
-  <view class="card" wx:for="{{classifyList.male}}" wx:for-item="item" wx:for-index="index" wx:key="index" bindtap="goDetails" data-params="{{item}}" data-cls="male">
-    <view class="name">{{item.name}}</view>
-    <view class="count">{{item.bookCount}}</view>
+<o-loading loading="{{loading}}"></o-loading>
+<view class="cls-group">
+  <view class="left-title">
+    <view class="{{active=='male'?'active':''}}" bindtap="setActive" data-id="male">男生</view>
+    <view class="{{active=='female'?'active':''}}" bindtap="setActive" data-id="female">女生</view>
+    <view class="{{active=='press'?'active':''}}" bindtap="setActive" data-id="press">出版</view>
+    <view class="{{active=='picture'?'active':''}}" bindtap="setActive" data-id="picture">漫画</view>
+  </view>
+  <view class="cls-right">
+    <view class="title">{{gender[active]}}</view>
+    <view class='classify'>
+      <view class="card" wx:for="{{classifyList[active]}}" wx:for-item="item" wx:for-index="index" wx:key="index" bindtap="goDetails" data-params="{{item}}" data-cls="male">
+        <view>
+          <view class="name">{{item.name}}</view>
+          <view class="count">{{item.bookCount}}</view>
+        </view>
+        <view class="cover">
+          <image src="https://statics.zhuishushenqi.com{{item.bookCover[0]}}"></image>
+        </view>
+      </view>
+    </view>
   </view>
 </view>
-<text class="title">女生</text>
-<view class='classify'>
-  <view class="card" wx:for="{{classifyList.female}}" wx:for-item="item" wx:for-index="index" wx:key="index" bindtap="goDetails" data-params="{{item}}" data-cls="male">
-    <view class="name">{{item.name}}</view>
-    <view class="count">{{item.bookCount}}</view>
-  </view>
-</view>
-<loading loading="{{loading}}" wx:if="{{loadshow}}"></loading>

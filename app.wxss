@@ -2,6 +2,7 @@
 @import "lib/css/iconfont.wxss";
 @import 'style/weui.wxss';
 @import 'style/iconfont.wxss';
+@import 'style/animation.wxss';
 page {
   font-family: Consolas, 'Courier New', monospace;
 }

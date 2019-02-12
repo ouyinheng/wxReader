@@ -12,8 +12,10 @@ page{
   position: fixed;
   top: 0;
   z-index: 1;
+  justify-content: space-around;
 }  
 .navbar .item{  
+  max-width: 50px;
   position: relative;  
   flex: auto;  
   text-align: center;  
@@ -94,4 +96,8 @@ bl-title-sm {
 .l-red {
   border-left:2px solid red;
   /* background: red; */
+}
+.weui-media-box__thumb {
+  width: 60px;
+  height: 80px;
 }

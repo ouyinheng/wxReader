@@ -9,7 +9,11 @@
 }
 .book-group {
   width: 100%;
-  height: calc(100vh);
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .book-group-item {
   position: relative;

@@ -1,1 +1,6 @@
-{}
+{
+  "navigationBarTitleText": "排行榜",
+  "usingComponents": {
+    "o-loading": "/components/oloading/oloading"
+  }
+}

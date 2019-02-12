@@ -3,7 +3,14 @@ Page({
   data: {
     classifyList: '123',
     loading: true,
-    loadshow: true
+    loadshow: true,
+    active: 'male',
+    gender: {
+      male: '男生',
+      female: '女生',
+      press: '出版',
+      picture: '漫画'
+    }
   },
   onLoad: function (options) {
     const _this = this;
@@ -31,13 +38,25 @@ Page({
       url: 'details/details?param=' + params.name +'&cls=' +cls
     })
   },
+  setActive(e) {
+    let id = e.target.dataset.id;
+    if(id==this.data.active)return;
+    this.showLoading();
+    this.setData({
+      active: id
+    })
+    this.cancelLoading();
+  },
   showLoading: function () {
-    wx.showToast({
-      title: '加载中',
-      icon: 'loading'
-    });
+    this.setData({
+      loading: true
+    })
   },
   cancelLoading: function () {
-    wx.hideToast();
+    setTimeout(() => {
+      this.setData({
+        loading: false
+      })
+    },500)
   }
 })

@@ -1,7 +1,8 @@
 {
     "navigationBarTitleText": "我的书架",
     "usingComponents": {
-      "loading": "/components/loading/loading",
-      "btn": "/components/btn/btn"
+      "o-list": "/components/list/list",
+      "btn": "/components/btn/btn",
+      "o-loading": "/components/oloading/oloading"
     }
 }
