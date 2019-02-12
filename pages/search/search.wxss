@@ -1,25 +1,60 @@
+.page-group {
+  width: 100%;
+  height: 100vh;
+}
 .header {
-  width: 99%;
-  height: 30px;
-  line-height: 30px;
-  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+  background-color: #EBEEF5;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border: 1px solid gray;
-  border-radius: 4px;
+  box-sizing: border-box;
 }
-.search-input {
-  display: block;
-  width: 70%;
+.input {
+  width: 100%;
+  height: 20px;
+  background-color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: black;
+}
+.btn {
+  width: 60px;
   height: 30px;
   line-height: 30px;
-  padding-left: 10px;
-}
-.search-btn {
-  display: block;
-  width: 30%;
-  height: 30px;
-  line-height: 30px;
+  text-align: center;
   font-size: 14px;
+  color: white;
+  background-color: orange;
+}
+.history, .section {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.title {
+  font-size: 14px;
+}
+.his-item {
+  font-size: 14px;
+  padding: 5px 0;
+}
+.section {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  top: 50px;
+  bottom: 0;
+  background-color: white;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.btn-group {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+.btn-group .btn {
+  width: 100px;
+  border-radius: 5px;
 }

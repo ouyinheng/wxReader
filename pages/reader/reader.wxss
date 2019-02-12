@@ -12,7 +12,7 @@
 }
 .cr {
   display: flex;
-  transition: all .5s;
+  /* transition: all .5s; */
 }
 .center {
   min-width: 100%;

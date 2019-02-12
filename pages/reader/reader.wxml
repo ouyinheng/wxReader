@@ -1,10 +1,10 @@
 <view class='outer'  bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend">
-  <view class='top'></view>
-  <view class='cr' style="transform: translateX({{distance}})">
+  <!-- <view class='top'></view> -->
+  <view class='cr' style="transform: translateX({{distance}});{{bool?'transition: all .3s':''}}">
     <view class='center'></view>
     <view class='right'>
       <button bindtap='goleft'>btn</button>
     </view>
   </view>
-  <view class='bottom'></view>
+  <!-- <view class='bottom'></view> -->
 </view>
