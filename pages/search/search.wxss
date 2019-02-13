@@ -33,6 +33,7 @@
 }
 .title {
   font-size: 14px;
+  color: #909399;
 }
 .his-item {
   font-size: 14px;

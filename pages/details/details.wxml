@@ -41,7 +41,7 @@
 <view class='footer'>
   <view class='btn' bindtap='addReadRack'>
     <text class='iconfont icon-add addbook'></text>
-    <text>加入书架</text>
+    <text>{{isAdd?'已加入': '加入书架'}}</text>
   </view> 
   <view class='btn' bindtap='toRead'>
     <text class='read'>立即阅读</text>

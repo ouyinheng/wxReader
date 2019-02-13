@@ -3,7 +3,7 @@
   <view wx:if="{{noBook}}" style="width: 100%;height: calc(100vh)；"  bindtap='refresh'>
     <image src='/lib/images/noBook.png' style="display: block;width: 200px;margin: 100px auto;" mode="aspectFit"></image>
   </view>
-  <view wx:if="{{!noBook}}" class="book-group" bindtouchstart="setind">
+  <view wx:if="{{!noBook}}" class="book-group">
     <o-list wx:for="{{bookList}}" wx:key="{{index}}" wx:item="{{item}}" list="{{item}}" bindtoRead="toRead" bindlongpress="del" data-id="{{item._id}}"></o-list>
   </view>
 </view>

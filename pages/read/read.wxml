@@ -1,7 +1,7 @@
 <view class='section' style="background:{{style.background}};color:{{style.color}}">
   <view class='content' bindtap='showOp'>
     <view wx:for="{{content}}" wx:key="{{index}}" class='content-sm'>
-      <view class='title' style="font-size: 22px;padding: 20px 0;">{{title[index]}}</view>
+      <view class='title' style="font-size: 18px;padding: 20px 0;">{{title[index]}}</view>
       <view wx:for="{{item}}" wx:key="{{index}}" style="font-size:{{style.fontSize}}px">
         <text>{{item}}。</text>
       </view>

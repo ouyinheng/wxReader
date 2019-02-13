@@ -8,7 +8,8 @@ Page({
     bookId: 0,
     detail: '',
     loading: true,
-    loadshow: true
+    loadshow: true,
+    isAdd: false
   },
 
   /**
@@ -19,6 +20,7 @@ Page({
       title: '书籍详情'//页面标题为路由参数
     })
     const bookId = options.id;
+    this.isAddBooks(bookId)
     const _this = this;
     this.setData({
       bookId: options.id
@@ -85,6 +87,13 @@ Page({
     })
   },
   addReadRack:function(){
+    if(this.data.isAdd) {
+      wx.showToast({
+        title: '已加入',
+        icon: 'success'
+      });
+      return;
+    }
     const _this = this;
     wx.getStorage({
       key: 'books',
@@ -127,5 +136,25 @@ Page({
   },
   cancelLoading: function () {
     wx.hideToast();
+  },
+  // 判断是否已存在书架中
+  isAddBooks(bookId) {
+    let index = -1;
+    let _this = this;
+    wx.getStorage({
+      key: 'books',
+      success: function(res) {
+        res.data.forEach((item, ind) => {
+          if (item._id == bookId) {
+            index = ind
+          }
+        })
+        if (index != -1) {
+          _this.setData({
+            isAdd: true
+          })
+        }
+      }
+    })
   }
 })

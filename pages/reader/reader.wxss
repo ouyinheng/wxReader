@@ -1,8 +1,7 @@
 .outer {
   width: 100%;
   height: calc(100vh);
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .top {

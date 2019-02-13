@@ -25,6 +25,8 @@
   left: 0;
   right: 0;
   overflow: hidden;
+  box-sizing: border-box;
+  padding: 0 0 0 10px;
 }
 .scroll2 {
   position: absolute;
@@ -33,6 +35,8 @@
   left: 0;
   right: 0;
   overflow: hidden;
+  box-sizing: border-box;
+  padding: 0 0 0 10px;
 }
 .my-title {
   display: block;

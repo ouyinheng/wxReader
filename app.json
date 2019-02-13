@@ -6,14 +6,14 @@
     "pages/read/read",
     "pages/classify/classify",
     "pages/classify/details/details",
-    "pages/rankingList/rankingList",
     "pages/read/chaList/chaList",
-    "pages/reader/reader"
+    "pages/reader/reader",
+    "pages/ranklist/ranklist"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "white",
-    "navigationBarTitleText": "zs",
+    "navigationBarTitleText": "看书吧",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -29,7 +29,7 @@
         "text": "书架"
       },
       {
-        "pagePath": "pages/rankingList/rankingList",
+        "pagePath": "pages/ranklist/ranklist",
         "iconPath": "lib/images/jx.png",
         "selectedIconPath": "lib/images/jxred.png",
         "text": "排行榜"

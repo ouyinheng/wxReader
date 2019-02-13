@@ -1,8 +1,8 @@
 <view class='header'>
    <text>共{{chapters.length}}章</text>
-   <text bindtap='reverse'>倒序</text>
+   <!-- <text bindtap='reverse'>倒序</text> -->
 </view>
-<view class="weui-cells weui-cells_after-title section">
+<view class="section">
   <view class="weui-cell" wx:for="{{chapters}}" wx:key="{{index}}" data-index="{{index}}" bindtap='change'>
     <view class="weui-cell__bd">{{item.title}}</view>
   </view>

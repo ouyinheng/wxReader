@@ -80,3 +80,6 @@ page {
   text-overflow:ellipsis;
   white-space:nowrap
 }
+.img {
+  background: linear-gradient(to right, #ececf0 8%, #d3d3d9 18%, #ececf0 33%);
+}

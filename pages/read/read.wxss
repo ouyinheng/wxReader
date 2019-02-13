@@ -1,5 +1,6 @@
 .section {
   /* margin-bottom: 40px; */
+  transition: all .7s;
 }
 
 .section .title {

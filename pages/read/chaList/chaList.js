@@ -44,7 +44,6 @@ Page({
   },
   change(e){
     var index = e.currentTarget.dataset.index;
-    console.log(index)
     wx.redirectTo({
       url: '../read?&id=' + this.data.bookId + '&index=' + index,
     })

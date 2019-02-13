@@ -31,7 +31,7 @@ Page({
   toRead(e) {
     let id = e.detail
     wx.navigateTo({
-      url: '../reader/reader?id=' + id
+      url: '../read/read?id=' + id
     })
   },
   // 删除书籍

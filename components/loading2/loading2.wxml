@@ -1,0 +1,10 @@
+<view class="skeleton">
+  <view class="img"></view>
+  <view class="right">
+    <view class="content"></view>
+    <view class="content" style="width: 2rem"></view>
+    <view class="content" style="width: 3rem"></view>
+    <view class="content"></view>
+    <view class="content" style="width: 5rem"></view>
+  </view>
+</view>
