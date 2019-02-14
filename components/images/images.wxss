@@ -1,0 +1,13 @@
+/* components/images/images.wxss */
+.cover {
+  max-width: 80px;
+  max-height: 110px;
+}
+.weui-media-box__thumb {
+  width: 60px!important;
+  height: 80px!important;
+}
+.list-img {
+  width:70px;
+  height:80px;
+}

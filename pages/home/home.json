@@ -3,6 +3,7 @@
     "usingComponents": {
       "o-list": "/components/list/list",
       "btn": "/components/btn/btn",
+      "o-img": "/components/images/images",
       "o-loading": "/components/oloading/oloading"
     }
 }

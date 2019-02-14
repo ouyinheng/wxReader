@@ -54,7 +54,3 @@
   color: RGB(237,66,75)!important;
   border-color: RGB(237,66,75)!important;
 }
-.weui-media-box__thumb {
-  width: 60px;
-  height: 80px;
-}

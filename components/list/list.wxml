@@ -1,7 +1,7 @@
 <!--components/list/list.wxml-->
 <view class="o-list" bindtap="toRead">
   <view>
-    <image class="cover" src="https://statics.zhuishushenqi.com{{list.cover}}"></image>
+    <o-img class="cover" src="https://statics.zhuishushenqi.com{{list.cover}}"></o-img>
   </view>
   <view class="o-intro">
     <p class="title">{{list.title}}</p>

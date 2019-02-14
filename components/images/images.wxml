@@ -1,0 +1,2 @@
+<!--components/images/images.wxml-->
+<image class='cover {{classname}}' src='{{url}}' data-src="{{src}}" bindload='imgload' mode="scaleToFill"></image>

@@ -2,6 +2,7 @@
   "navigationBarTitleText": "排行榜",
   "usingComponents": {
     "o-list": "/components/list/list",
-    "o-loading": "/components/loading2/loading2"
+    "o-loading": "/components/loading2/loading2",
+    "o-img": "/components/images/images"
   }
 }

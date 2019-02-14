@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "btn": "/components/btn/btn"
+    "btn": "/components/btn/btn",
+    "o-img": "/components/images/images"
   }
 }
