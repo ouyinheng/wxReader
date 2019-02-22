@@ -5,15 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    value:'',
-    list:[],
-    page:0,
+    value: '',
+    list: [],
+    page: 0,
     limit: 7,
-    key:'',
+    key: '',
     inputShowed: false,
     inputVal: "",
     hasnext: true,
-    isLoadmore:false,
+    isLoadmore: false,
     showLoad: false,
     searchValue: '',
     history: [],
@@ -23,71 +23,75 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  getListData(){
+  getListData() {
     this.showLoading();
     var that = this;
-    let { page, limit, searchValue } = this.data;
+    let {
+      page,
+      limit,
+      searchValue
+    } = this.data;
     this.setData({
       page: page,
       limit: limit,
       isLoadmore: true,
-      showLoad:true
+      showLoad: true
     })
     var url = `https://api.zhuishushenqi.com/book/fuzzy-search?query=${searchValue}&start=${page}&limit=${limit}`
     if (this.data.hasnext) {
       wx.request({
         url: url,
-        success: function (res) {
-          let list = that.data.list||[];
+        success: function(res) {
+          let list = that.data.list || [];
           list.push(...res.data.books)
           that.setData({
             list,
             isLoadmore: false,
-            page: page+7
+            page: page + 7
           })
           that.cancelLoading();
         }
       })
     }
   },
-  seeBookDet:function(e){
+  seeBookDet: function(e) {
     var id = e.detail;
     console.log(id)
     wx.navigateTo({
       url: '../details/details?id=' + id
     })
   },
-  showLoading: function () {
+  showLoading: function() {
     wx.showToast({
       title: '加载中',
       icon: 'loading'
     });
   },
-  cancelLoading: function () {
+  cancelLoading: function() {
     wx.hideToast();
   },
   // weui
-  showInput: function () {
+  showInput: function() {
     this.setData({
       inputShowed: true
     });
   },
-  hideInput: function () {
+  hideInput: function() {
     this.setData({
       inputVal: "",
-      list:"",
+      list: "",
       inputShowed: false,
       showLoad: false
     });
   },
-  clearInput: function () {
+  clearInput: function() {
     this.setData({
       inputVal: ""
     });
   },
-  inputTyping: function (e) {
+  inputTyping: function(e) {
     console.log(e.detail.value)
-    if(!e.detail.value){
+    if (!e.detail.value) {
       this.setData({
         list: [],
         auto: []
@@ -111,15 +115,15 @@ Page({
     })
   },
   searchbook() {
-    if(!this.data.searchValue)return;
+    if (!this.data.searchValue) return;
     let history = [];
     history.push(this.data.searchValue)
     let res = wx.getStorageSync('history')
-    if(!res) {
+    if (!res) {
       wx.setStorageSync('history', history)
     } else {
       history = history.concat(res)
-      if(history.length>10)history.splice(10,1)
+      if (history.length > 10) history.splice(10, 1)
       history = Array.from(new Set(history))
       wx.setStorageSync('history', history)
     }
@@ -139,7 +143,7 @@ Page({
   toRead(e) {
     let id = e.detail
     wx.navigateTo({
-      url: '../read/read?id=' + id
+      url: '../details/details?id=' + id
     })
   },
   onShow() {
@@ -158,7 +162,7 @@ Page({
     let index = e.target.dataset.id;
     let data = this.data.history;
     let _this = this;
-    data.splice(index,1);
+    data.splice(index, 1);
     wx.showModal({
       title: '提示',
       content: '确定删除吗',
