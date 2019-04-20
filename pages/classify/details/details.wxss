@@ -1,6 +1,11 @@
 .page-group {
+  position: absolute;
+  top: 84px;
+  left: 0;
+  bottom: 0;
   width: 100%;
   padding: 0 10px 0 20px;
+  background-color: white;
   box-sizing: border-box;
 }
 .booklist {

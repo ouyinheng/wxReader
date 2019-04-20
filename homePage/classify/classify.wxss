@@ -6,7 +6,7 @@
   bottom: 0;
   display: flex;
   overflow: hidden;
-  /* background-color: white; */
+  background-color: white;
 }
 .left-title {
   width: 20%;

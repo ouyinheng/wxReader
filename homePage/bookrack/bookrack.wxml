@@ -1,0 +1,24 @@
+<cu-custom bgColor="bg-red" isBack="{{false}}">
+  <view slot="content">书架</view>
+</cu-custom>
+<!-- 暂无书籍 -->
+<view wx:if="{{!loading}}">
+  <view wx:if="{{noBook}}" style="width: 100%;height: calc(100vh)；"  bindtap='refresh'>
+    <image src='/lib/images/noBook.png' style="display: block;width: 200px;margin: 100px auto;" mode="aspectFit"></image>
+  </view>
+</view>
+<!-- 书籍列表 -->
+<view class="list-group">
+  <view class="cu-card" wx:if="{{!noBook}}" wx:for="{{bookList}}" wx:item="{{item}}" wx:key="{{index}}" bindtap="toRead" data-id="{{item._id}}">
+    <view class="cu-item bg-img shadow-blur">
+      <image class="images" src='https://statics.zhuishushenqi.com{{item.cover}}'></image>
+      <view class='ml-2'>
+        <view class="cardTitle">{{item.title}}</view>
+        <view class="cardAuthor" style="color:#39b54a;">{{item.author}}</view>
+        <view class="text-cut radius" style="width:220px;color:#8799a3;">{{item.lastChapter}}</view>
+        <!-- <view class="cardLast">{{item.lastChapter}}</view> -->
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cu-tabbar-height"></view>

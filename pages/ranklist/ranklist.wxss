@@ -1,12 +1,16 @@
 /* pages/ranklist/ranklist.wxss */
 .page-group {
   width: 100%;
-  height: 100vh;
+  position: absolute;
+  top: 168rpx;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
   display: flex;
-
+  background-color: white;
 }
 .rank {
-  width: 80px;
+  width: 180rpx;
   height: 100%;
   overflow: hidden;
   overflow-y: auto;
@@ -14,7 +18,7 @@
 }
 .rank .rank-title {
   color: #606266;
-  font-size: 14px;
+  font-size: 32rpx;
   padding: 5px 0 5px 5px;
 }
 .list {
@@ -31,7 +35,7 @@
   border-bottom: 1rpx solid gainsboro;
 }
 .list .cls .cls-item {
-  width: 30px;
+  width: 100rpx;
   padding: 5px 7px;
   border: 1rpx solid gainsboro;
   font-size: 13px;
@@ -49,6 +53,9 @@
   overflow-y: auto;
   box-sizing: border-box;
   /* padding: 10px; */
+}
+.content {
+  display: flex;
 }
 .active, .rankacitve {
   color: RGB(237,66,75)!important;

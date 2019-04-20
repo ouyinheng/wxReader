@@ -1,4 +1,7 @@
 <!--pages/ranklist/ranklist.wxml-->
+<cu-custom bgColor="bg-red" isBack="{{false}}">
+  <view slot="content">排行榜</view>
+</cu-custom>
 <view class='page-group'>
   <view class='rank'>
     <view class="rank-title {{rankacitve==index?'rankacitve':''}}" wx:for="{{ranklist[clslist[active].eg]}}" wx:item="{{item}}" wx:index="{{index}}" wx:key="{{index}}" data-index="{{index}}" data-id="{{item._id}}" bindtap="setRankActive">{{item.shortTitle}}</view>
@@ -15,21 +18,21 @@
       <o-loading></o-loading>
     </view>
       <view wx:for="{{bookList}}" data-id="{{index}}" wx:key="{{index}}" bindtap='toRead' data-id="{{item._id}}">
-          <view class="weui-panel__bd" style="text-align:left;">
-            <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                    <o-img classname="weui-media-box__thumb" src="https://statics.zhuishushenqi.com{{item.cover}}" ></o-img>
-                </view>
-                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                    <view class="my-title">{{item.title}}</view>
-                    <view class="weui-media-box__desc">
-                      <text style='color: green;'>{{item.author}}</text>
-                    </view>
-                    <view class="weui-media-box__desc my-intro">{{item.shortIntro}}</view>
-                </view>
-            </view>
+        <view class="weui-panel__bd" style="text-align:left;">
+          <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                  <o-img classname="weui-media-box__thumb" src="https://statics.zhuishushenqi.com{{item.cover}}" ></o-img>
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="my-title">{{item.title}}</view>
+                  <view class="weui-media-box__desc">
+                    <text  style="color:#39b54a;">{{item.author}}</text>
+                  </view>
+                  <view class="weui-media-box__desc my-intro" style="width:220px;color:#8799a3;">{{item.shortIntro}}</view>
+              </view>
           </view>
         </view>
+      </view>
     </view>
   </view>
 </view>

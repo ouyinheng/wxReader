@@ -1,8 +1,7 @@
 /**app.wxss**/
-@import "lib/css/iconfont.wxss";
-@import 'style/weui.wxss';
-@import 'style/iconfont.wxss';
-@import 'style/animation.wxss';
+@import "style/colorui/main.wxss";
+@import "style/colorui/icon.wxss";
+@import "style/colorui/animation.wxss";
 page {
   font-family: Consolas, 'Courier New', monospace;
 }
@@ -78,7 +77,7 @@ page {
 .over-text {
   overflow:hidden;
   text-overflow:ellipsis;
-  white-space:nowrap
+  white-space:nowrap;
 }
 .img {
   background: linear-gradient(to right, #ececf0 8%, #d3d3d9 18%, #ececf0 33%);

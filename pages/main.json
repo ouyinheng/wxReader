@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "book-rack": "/homePage/bookrack/bookrack",
+    "rank-list": "/homePage/ranklist/ranklist",
+    "class-ify": "/homePage/classify/classify",
+    "o-home": "/pages/home/home"
+  }
+}

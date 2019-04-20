@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/main",
     "pages/home/home",
     "pages/details/details",
     "pages/read/read",
@@ -13,8 +14,11 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "white",
-    "navigationBarTitleText": "看书吧",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "cu-custom": "/style/colorui/components/cu-custom"
   },
   "tabBar": {
     "position": "bottom",

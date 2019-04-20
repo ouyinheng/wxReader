@@ -1,4 +1,11 @@
-<view class="page-group">
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">导航栏</view>
+  </cu-custom>
+</view>
+
+<!-- <view class="page-group">
   <view class="header">
     <input class="input" maxlength="20" type="text" value="{{searchValue}}"  bindinput="inputTyping" placeholder="请输入关键词"></input>
     <view class="btn" bindtap="searchbook">搜索</view>
@@ -20,4 +27,4 @@
       </view>
     </view>
   </view>
-</view>
+</view> -->

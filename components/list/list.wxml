@@ -1,5 +1,5 @@
 <!--components/list/list.wxml-->
-<view class="o-list" bindtap="toRead">
+<!-- <view class="o-list" bindtap="toRead">
   <view>
     <o-img class="cover" src="https://statics.zhuishushenqi.com{{list.cover}}"></o-img>
   </view>
@@ -7,5 +7,15 @@
     <p class="title">{{list.title}}</p>
     <p class="author">{{list.author}}</p>
     <p class="lastChapter">{{list.lastChapter}}</p>
+  </view>
+</view> -->
+<view class="cu-card" bindtap="toRead">
+  <view class="cu-item bg-img shadow-blur">
+    <image src='https://statics.zhuishushenqi.com{{list.cover}}'></image>
+    <view class='ml-2'>
+      <view class="cardTitle">{{list.title}}</view>
+      <view class="cardAuthor" style="color:#a5673f;">{{list.author}}</view>
+      <view class="text-cut radius" style="width:220px;color:#8799a3;">{{list.lastChapter}}</view>
+    </view>
   </view>
 </view>

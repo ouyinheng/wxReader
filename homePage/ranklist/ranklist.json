@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "o-list": "/components/list/list",
+    "o-loading": "/components/loading2/loading2",
+    "o-img": "/components/images/images"
+  }
+}

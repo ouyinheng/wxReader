@@ -1,3 +1,8 @@
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">分类</view>
+</cu-custom>
+
 <view class='page-group'>
   <scroll
     list="{{booklist}}"

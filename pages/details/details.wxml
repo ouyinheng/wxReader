@@ -1,4 +1,7 @@
-<view>
+<cu-custom bgColor="bg-red" isBack="{{false}}">
+  <view slot="content">分类</view>
+</cu-custom>
+<view class='details'>
   <view class='header'>
     <view class='left'>
        <image style="width: 70px; height: 90px; background-color: #eeeeee;" mode="{{item.mode}}" src="https://statics.zhuishushenqi.com{{detail.cover}}"></image>

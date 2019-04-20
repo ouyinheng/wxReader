@@ -29,7 +29,8 @@ Page({
     })
   },
   toRead(e) {
-    let id = e.detail
+    console.log(e.currentTarget.dataset.id)
+    let id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: '../read/read?id=' + id
     })

@@ -26,7 +26,6 @@ Component({
    */
   methods: {
     imgload(e) {
-      console.log(e)
       this.setData({
         url: e.target.dataset.src
       })

@@ -1,0 +1,26 @@
+<!--pages/main.wxml-->
+<view class='contaner'>
+  <book-rack wx:if="{{active==1}}"></book-rack>
+  <rank-list wx:if="{{active==2}}"></rank-list>
+  <class-ify wx:if="{{active==3}}"></class-ify>
+</view>
+<view class="cu-bar tabbar bg-white">
+  <view class="action {{active==1?'text-red':'text-gray'}}" bindtap='setActive' data-active='1'>
+    <view class="icon-homefill"></view> 首页
+  </view>
+  <view class="action {{active==2?'text-red':'text-gray'}}" bindtap='setActive' data-active='2'>
+    <view class="icon-rankfill"></view> 排行榜
+  </view>
+  <view class="action text-gray add-action">
+    <button class="cu-btn icon-discover bg-red shadow"></button>
+    书荒
+  </view>
+  <view class="action {{active==3?'text-red':'text-gray'}}" bindtap='setActive' data-active='3'>
+    <view class="icon-circlefill"></view>
+    分类
+  </view>
+  <view class="action {{active==4?'text-red':'text-gray'}}" bindtap='setActive' data-active='4'>
+    <view class="icon-myfill"></view>
+    我的
+  </view>
+</view>

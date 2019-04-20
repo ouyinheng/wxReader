@@ -1,0 +1,12 @@
+/* pages/main.wxss */
+.contaner {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.cu-bar {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
