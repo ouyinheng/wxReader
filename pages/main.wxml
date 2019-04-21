@@ -11,7 +11,7 @@
   <view class="action {{active==2?'text-red':'text-gray'}}" bindtap='setActive' data-active='2'>
     <view class="icon-rankfill"></view> 排行榜
   </view>
-  <view class="action text-gray add-action">
+  <view class="action text-gray add-action" bindtap='goSH'>
     <button class="cu-btn icon-discover bg-red shadow"></button>
     书荒
   </view>

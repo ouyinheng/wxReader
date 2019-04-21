@@ -10,7 +10,7 @@
       <view class='flex-between'>
         <view class="content">
           <text class="icon-github text-grey"></text>
-          <text class="text-grey">{{item.title}}</text>
+          <text class="text-black">{{item.title}}</text>
         </view>
         <view class="cu-tag round {{index%3==0?'bg-blue':index%3==1?'bg-orange':index%3==2?'bg-red':'bg-olive'}} light">{{item.majorCate}}</view>
       </view>
@@ -28,7 +28,7 @@
       <view class='flex-between'>
         <view class="content">
           <text class="icon-github text-grey"></text>
-          <text class="text-grey">{{item.title}}</text>
+          <text class="text-black">{{item.title}}</text>
         </view>
         <view class="cu-tag round bg-red" wx:if="{{rankactive==index}}">{{index}}</view>
       </view>

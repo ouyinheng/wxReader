@@ -7,38 +7,37 @@ Page({
   data: {
     bookId: 0,
     detail: '',
-    loading: true,
-    loadshow: true,
-    isAdd: false
+    loading: false,
+    isAdd: false,
+    discussList: [],//评论列表
+    loaddis: false,//加载评论,
+    disStart: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: '书籍详情'//页面标题为路由参数
-    })
     const bookId = options.id;
     this.isAddBooks(bookId)
-    const _this = this;
     this.setData({
-      bookId: options.id
+      bookId: options.id,
+      loading: true
     })
     // api.zhuishushenqi.com / book / 书籍id(_id)
+    this.getBookInfo(bookId);
+    this.getDiscussList(bookId);
+  },
+  getBookInfo(bookId) {
     var url = "https://api.zhuishushenqi.com/book/" + bookId;
+    const _this = this;
     wx.request({
       url: url,
       success: function (res) {
         _this.setData({
           detail: res.data,
-          loading:false
+          loading: false
         })
-        setTimeout(_ => {
-          _this.setData({
-            loadshow: false
-          })
-        }, 1000)
       }
     })
   },
@@ -128,15 +127,6 @@ Page({
       icon: 'success'
     });
   },
-  showLoading: function () {
-    wx.showToast({
-      title: '加载中',
-      icon: 'loading'
-    });
-  },
-  cancelLoading: function () {
-    wx.hideToast();
-  },
   // 判断是否已存在书架中
   isAddBooks(bookId) {
     let index = -1;
@@ -154,6 +144,27 @@ Page({
             isAdd: true
           })
         }
+      }
+    })
+  },
+  loadmore() {
+    this.getDiscussList(this.data.bookId);
+  },
+  // 获取评论列表
+  getDiscussList(id) {
+    const _this = this;
+    this.setData({
+      loaddis: true
+    })
+    wx.request({
+      url: `https://api.zhuishushenqi.com/post/review/by-book?book=${id}&sort=updated&type=normal&start=${this.data.disStart}&limit=20`,
+      success(res) {
+        _this.setData({
+          discussList: _this.data.discussList.concat(res.data.reviews),
+          loading: false,
+          disStart: _this.data.disStart + 20,
+          loaddis: false
+        })
       }
     })
   }

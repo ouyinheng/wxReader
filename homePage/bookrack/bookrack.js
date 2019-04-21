@@ -6,6 +6,7 @@ Component({
     bookList: [],
     loading: true,
     noBook: true,
+    loadModal: false
   },
   lifetimes: {
     attached() {
@@ -42,8 +43,8 @@ Component({
       })
     },
     // 删除书籍
-    del(e) {
-      let id = e.target.dataset.id;
+    delBook(e) {
+      let index = e.currentTarget.dataset.index;
       let books = [];
       let _this = this;
       wx.showModal({
@@ -51,18 +52,19 @@ Component({
         content: '确定删除吗',
         success(res) {
           if (res.confirm) {
+            _this.setData({
+              loadModal: true
+            })
             wx.getStorage({
               key: 'books',
               success(res) {
                 books = res.data;
-                console.log(books)
-                books.forEach((item, index) => {
-                  if (item._id == id) {
-                    books.splice(index, 1);
-                  }
+                books.splice(index, 1);
+                wx.setStorageSync('books', books);
+                _this.setData({
+                  loadModal: false
                 })
-                wx.setStorageSync('books', books)
-                _this.onShow();
+                _this.refresh();
               }
             })
           } else if (res.cancel) {
@@ -77,7 +79,7 @@ Component({
         loading: true,
         loadshow: true
       })
-      this.onShow()
+      this.getBookList()
     }
   }
 })

@@ -1,0 +1,36 @@
+<!--homePage/reader/reader.wxml-->
+<view class='reader'>
+  <cu-custom bgColor="bg-white" isBack="{{false}}">
+    <!-- <view slot="backText">返回</view> -->
+    <!-- <view slot="content">{{params}}</view> -->
+  </cu-custom>
+
+  <view class='content-group'>
+    <view wx:for="{{content}}" wx:index="{{index}}" wx:item="{{item}}" wx:key="{{index}}">
+      <view class='title' style="font-size: 18px;padding: 20px 0;">{{title[index]}}</view>
+      <view class='content-item' wx:for="{{item}}" wx:key="{{index}}" style="font-size:{{style.fontSize}}px">
+        <text>{{item}}。</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='footer'>
+    <view class='btn' bindtap='goBack'>
+      <text class='icon-back'></text>
+    </view>
+    <view class='btn' bindtap='setChapter'>
+      <text class='icon-sort'></text>
+    </view>
+    <view class='btn' bindtap='setNight'>
+      <text class='icon-attention'></text>
+    </view>
+    <view class='btn' bindtap='setCache'>
+      <text class='icon-settings'></text>
+    </view>
+  </view>
+</view> 
+
+<view class='cu-load load-modal' wx:if="{{loading}}">
+  <image src='/lib/images/bg_wsc.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
+</view>

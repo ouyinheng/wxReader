@@ -19,6 +19,7 @@ Page({
     loadshow: true
   },
   onLoad: function (options) {
+    console.log(options)
     var that = this;
     this.setData({
       bookId: options.id
@@ -54,7 +55,7 @@ Page({
   },
   onUnload() {
     wx.reLaunch({
-      url: '../home/home'
+      url: '/pages/main'
     })
   },
   //获取章节内容,改变linknum就能跳转
@@ -189,13 +190,7 @@ Page({
   setCache() {
     
   },
-  showLoading: function () {
-    wx.showToast({
-      title: '加载中',
-      icon: 'loading'
-    });
-  },
-  cancelLoading: function () {
-    wx.hideToast();
+  goBack() {
+    wx.navigateBack()
   }
 })

@@ -1,0 +1,9 @@
+/* homePage/classify/details/details.wxss */
+.flex-center {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.flex-center text {
+  font-size: 16px;
+}

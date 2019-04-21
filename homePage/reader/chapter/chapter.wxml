@@ -1,0 +1,18 @@
+<!--homePage/reader/chapter/chapter.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">共{{chapters.length}}章</view>
+</cu-custom>
+<view class="section">
+  <view class="cu-list menu  margin-bottom-xl shadow-lg">
+    <view class="cu-item" wx:for="{{chapters}}" wx:key="{{index}}" data-index="{{index}}" bindtap='change'>
+      <view class="content">
+        <text class="text-black">{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='cu-load load-modal' wx:if="{{loading}}">
+  <image src='/lib/images/bg_wsc.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
+</view>

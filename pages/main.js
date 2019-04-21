@@ -19,5 +19,10 @@ Page({
     this.setData({
       active
     })
+  },
+  goSH() {
+    wx.navigateTo({
+      url: '/homePage/shortage/shortage',
+    })
   }
 })

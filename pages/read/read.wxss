@@ -46,25 +46,22 @@
 
 .footer {
   width: 100%;
-  padding: 5px;
+  height: 50px;
   position: fixed;
   bottom: 0;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: space-around;
-  background: #000;
+  background: #ffffff;
+  color: black;
   z-index: 10;
+  transition: all .7s;
 }
 
 .footer .btn {
-  width: 20%;
-  font-size: 12px;
-  padding: 4px;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
+  width: 100%;
+  font-size: 20px;
   text-align: center;
-  color: #fff;
 }
 
 .my-slide {
@@ -145,4 +142,7 @@
 
 .list-section {
   margin-top: 50px;
+}
+.my-row .btn text {
+  font-size: 16px;
 }

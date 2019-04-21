@@ -82,3 +82,7 @@ page {
 .img {
   background: linear-gradient(to right, #ececf0 8%, #d3d3d9 18%, #ececf0 33%);
 }
+.cu-load+.load-modal .png {
+  width: 150px;
+  height:150px;
+}

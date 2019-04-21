@@ -1,15 +1,15 @@
 {
   "pages": [
     "pages/main",
-    "pages/home/home",
     "pages/details/details",
     "pages/read/read",
     "pages/search/search",
-    "pages/classify/classify",
-    "pages/classify/details/details",
     "pages/read/chaList/chaList",
     "pages/reader/reader",
-    "pages/ranklist/ranklist"
+    "homePage/classify/details/details",
+    "homePage/shortage/shortage",
+    "homePage/reader/reader",
+    "homePage/reader/chapter/chapter"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -19,37 +19,5 @@
   },
   "usingComponents": {
     "cu-custom": "/style/colorui/components/cu-custom"
-  },
-  "tabBar": {
-    "position": "bottom",
-    "backgroundColor": "white",
-    "selectedColor": "#d81e06",
-    "borderStyle": "black",
-    "list": [
-      {
-        "pagePath": "pages/home/home",
-        "iconPath": "lib/images/sj.png",
-        "selectedIconPath": "lib/images/sjred.png",
-        "text": "书架"
-      },
-      {
-        "pagePath": "pages/ranklist/ranklist",
-        "iconPath": "lib/images/jx.png",
-        "selectedIconPath": "lib/images/jxred.png",
-        "text": "排行榜"
-      },
-      {
-        "pagePath": "pages/classify/classify",
-        "iconPath": "lib/images/fl.png",
-        "selectedIconPath": "lib/images/flred.png",
-        "text": "分类"
-      },
-      {
-        "pagePath": "pages/search/search",
-        "iconPath": "lib/images/ss.png",
-        "selectedIconPath": "lib/images/ssred.png",
-        "text": "搜索"
-      }
-    ]
   }
 }

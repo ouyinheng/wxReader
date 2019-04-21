@@ -42,7 +42,7 @@ Component({
       var params = event.currentTarget.dataset.params;
       var cls = event.currentTarget.dataset.cls;
       wx.navigateTo({
-        url: '/pages/classify/details/details?param=' + params.name + '&cls=' + cls
+        url: '/homePage/classify/details/details?param=' + params.name + '&cls=' + cls
       })
     },
     setActive(e) {

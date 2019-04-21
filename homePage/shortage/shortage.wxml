@@ -1,0 +1,39 @@
+<!--homePage/shortage/shortage.wxml-->
+<cu-custom bgColor="bg-red" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">书荒</view>
+</cu-custom>
+<view class='post-list'>
+  <view class="cu-card case {{false?'no-card':''}}" wx:for="{{postlist}}" wx:item="{{item}}" wx:index="{{index}}" wx:key="{{index}}">
+    <view class="cu-item shadow">
+      <view class="image">
+        <image src="https://statics.zhuishushenqi.com{{item.author.activityAvatar}}" mode="widthFix"></image>
+        <view class="cu-tag bg-blue">史诗</view>
+        <view class="cu-bar bg-shadeBottom">
+          <text class="text-cut">{{item.title}}</text>
+        </view>
+      </view>
+      <view class="cu-list menu-avatar">
+        <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url(https://statics.zhuishushenqi.com{{item.author.avatar}});"></view>
+          <view class="content flex-sub">
+            <view class="text-grey">{{item.author.nickname}}</view>
+            <view class="text-gray text-sm flex justify-between">
+              十天前
+              <view class="text-gray text-sm">
+                <text class="icon-attentionfill margin-lr-xs"></text> {{item.commentCount}}
+                <text class="icon-appreciatefill margin-lr-xs"></text> {{item.likeCount}}
+                <text class="icon-messagefill margin-lr-xs"></text> 30
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cu-tabbar-height"></view>
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <image src='/lib/images/bg_wsc.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
+</view>

@@ -1,5 +1,6 @@
 .details {
   background-color: white;
+  padding-top: 10px;
 }
 .header {
   width: 100%;
@@ -10,12 +11,16 @@
 }
 .header .left {
   width: 25%;
-
 }
 .header .right {
-  width: 65%;
+  width: 70%;
   display: flex;
   flex-direction: column;
+}
+.right .title {
+  color: #333333;
+  font-size: 40rpx;
+  font-weight: 400;
 }
 .header .right .title-sm {
   font-size: 14px;
@@ -43,6 +48,7 @@
 .longIntro {
   width: 100%;
   padding: 5px;
+  margin-top: 10px;
 }
 .longIntro .title {
   display: block;
@@ -67,12 +73,23 @@
   z-index: 10;
 }
 .footer .btn {
-  width:50%;
+  width:100%;
   height: 50px;
   line-height: 50px;
   text-align: center;
+  border-radius: 0;
 }
 .footer .btn:last-of-type {
    background: RGB(237,66,75); 
    color: #fff;
+}
+
+.flex-center {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.flex-center {
+  font-size: 16px;
 }

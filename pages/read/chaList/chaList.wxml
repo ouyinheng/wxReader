@@ -1,12 +1,25 @@
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">共{{chapters.length}}章</view>
+</cu-custom>
 <view class='header'>
    <text>共{{chapters.length}}章</text>
-   <!-- <text bindtap='reverse'>倒序</text> -->
+   <text bindtap='reverse'>倒序</text>
 </view>
 <view class="section">
-  <view class="weui-cell" wx:for="{{chapters}}" wx:key="{{index}}" data-index="{{index}}" bindtap='change'>
+  <!-- <view class="weui-cell" wx:for="{{chapters}}" wx:key="{{index}}" data-index="{{index}}" bindtap='change'>
     <view class="weui-cell__bd">{{item.title}}</view>
+  </view> -->
+  <view class="cu-list menu  margin-bottom-xl shadow-lg">
+    <view class="cu-item" wx:for="{{chapters}}" wx:key="{{index}}" data-index="{{index}}" bindtap='change'>
+      <view class="content">
+        <!-- <text class="icon-github text-grey"></text> -->
+        <text class="text-black">{{item.title}}</text>
+      </view>
+    </view>
   </view>
 </view>
-<view class='loading {{loading?"":"cancel"}}' wx:if="{{loadshow}}">
-  <image src='/lib/images/spin2.svg'></image>
+<view class='cu-load load-modal' wx:if="{{loadshow}}">
+  <image src='/lib/images/bg_wsc.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
 </view>
