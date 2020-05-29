@@ -24,15 +24,20 @@ Component({
         key: 'books',
         success: function (res) {
           if (res.data.length > 0) {
-            _this.setData({ bookList: res.data, noBook: false, loading: false, loadshow: false })
+            setTimeout(() => {
+				_this.setData({ bookList: res.data, noBook: false, loading: false, loadModal: false })
+			}, 1000)
           } else {
-            _this.setData({ bookList: res.data, noBook: true, loading: false, loadshow: false })
+			setTimeout(() => {
+				_this.setData({ bookList: res.data, noBook: true, loading: false, loadModal: false })
+			}, 1000)
           }
-        }
-
-      })
-      this.setData({
-        loading: false
+		},
+		fail: () => {
+			this.setData({
+				loading: false
+			})
+		}
       })
     },
     toRead(e) {
@@ -77,7 +82,7 @@ Component({
       this.setData({
         noBook: false,
         loading: true,
-        loadshow: true
+        loadModal: true
       })
       this.getBookList()
     }

@@ -1,23 +1,25 @@
 {
-  "pages": [
-    "pages/main",
-    "pages/details/details",
-    "pages/read/read",
-    "pages/search/search",
-    "pages/read/chaList/chaList",
-    "pages/reader/reader",
-    "homePage/classify/details/details",
-    "homePage/shortage/shortage",
-    "homePage/reader/reader",
-    "homePage/reader/chapter/chapter"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "white",
-    "navigationBarTextStyle": "white",
-    "navigationStyle": "custom"
-  },
-  "usingComponents": {
-    "cu-custom": "/style/colorui/components/cu-custom"
-  }
+	"pages": [
+		"pages/picture/picture",
+		"pages/main",
+		"pages/details/details",
+		"pages/read/read",
+		"pages/search/search",
+		"pages/read/chaList/chaList",
+		"pages/reader/reader",
+		"homePage/classify/details/details",
+		"homePage/shortage/shortage",
+		"homePage/reader/reader",
+		"homePage/reader/chapter/chapter"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#ffffff",
+		"navigationBarTextStyle": "white",
+		"navigationStyle": "custom"
+	},
+	"usingComponents": {
+		"cu-custom": "/style/colorui/components/cu-custom"
+	},
+	"sitemapLocation": "sitemap.json"
 }

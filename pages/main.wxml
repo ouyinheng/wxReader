@@ -3,6 +3,7 @@
   <book-rack wx:if="{{active==1}}"></book-rack>
   <rank-list wx:if="{{active==2}}"></rank-list>
   <class-ify wx:if="{{active==3}}"></class-ify>
+  <mine wx:if="{{active==4}}"></mine>
 </view>
 <view class="cu-bar tabbar bg-white">
   <view class="action {{active==1?'text-red':'text-gray'}}" bindtap='setActive' data-active='1'>

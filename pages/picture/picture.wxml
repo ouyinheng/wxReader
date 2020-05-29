@@ -1,0 +1,38 @@
+<!--pages/picture/picture.wxml-->
+<scroll-view scroll-y class="scrollPage">
+	<cu-custom bgColor="bg-red" isBack="{{false}}">
+		<view slot="content">Picture</view>
+	</cu-custom>
+	<view class="img-list">
+		<view class="cu-card case" wx:for="{{beautyList}}" wx:for-index="index" wx:for-item="item" wx:key="index" style="width: {{width}}px; position: absolute;top: {{item.top}}px;left: {{item.left}}px">
+			<view class="cu-item shadow">
+				<view class="image">
+					<image src="http://hbimg.huabanimg.com/{{item.file.key}}" mode="widthFix" lazy-load="{{true}}"></image>
+					<view class="cu-tag bg-blue">{{item.board.title}}</view>
+					<view class="cu-bar bg-shadeBottom">
+						<text class="text-cut">{{item.raw_text}}</text>
+					</view>
+				</view>
+				<view class="cu-list menu-avatar">
+					<view class="cu-item">
+						<view class="cu-avatar round lg" style="background-image:url(http://hbimg.huabanimg.com/{{item.file.key}});"></view>
+						<view class="content flex-sub">
+						<view class="text-grey">{{item.user.username}}</view>
+						<view class="text-gray text-sm flex justify-between">
+							{{item.user.created_at}}
+							<view class="text-gray text-sm">
+								<text class="cuIcon-attentionfill margin-lr-xs"></text> {{item.repin_count}}
+								<text class="cuIcon-appreciatefill margin-lr-xs"></text> {{item.like_count}}
+							</view>
+						</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</scroll-view>
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <image src='/lib/images/bg_wsc.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
+</view>

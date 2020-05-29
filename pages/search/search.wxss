@@ -43,7 +43,7 @@
   position: fixed;
   z-index: 10;
   width: 100%;
-  top: 50px;
+  top: 80px;
   bottom: 0;
   background-color: white;
   overflow: hidden;

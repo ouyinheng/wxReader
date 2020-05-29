@@ -22,7 +22,7 @@ Page({
   },
   goSH() {
     wx.navigateTo({
-      url: '/homePage/shortage/shortage',
+      url: '/pages/search/search',
     })
   }
 })

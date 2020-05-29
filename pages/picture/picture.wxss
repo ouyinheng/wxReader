@@ -1,0 +1,11 @@
+/* pages/picture/picture.wxss */
+.img-list {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	overflow: auto;
+}
+.cu-card {
+	/* width: 48 */
+	z-index: 10;
+}
