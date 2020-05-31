@@ -21,6 +21,9 @@
   left: 0;
   overflow-y: auto;
 }
+.p-2 {
+    padding: 10px;
+}
 .weui-cell__bd {
   font-size: 13px;
 }

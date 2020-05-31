@@ -1,0 +1,108 @@
+.cu-item {
+  margin: 0!important;
+}
+image {
+  margin: 0!important;
+}
+.footer {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #ffffff;
+  color: black;
+  z-index: 10;
+  transition: all .7s;
+}
+
+.footer .btn {
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+}
+
+.my-slide {
+  width: 100%;
+}
+
+.my-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.wxapp-modal {
+  float: left;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.wxapp-modal .left {
+  width: 80%;
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  flex: left;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.wxapp-modal .right {
+  width: 20%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.wxapp-modal .left>text {
+  display: block;
+  height: 20px;
+  line-height: 20px;
+  padding: 20px;
+  border-bottom: 1px solid gray;
+  clear: both;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.list-header {
+  width: 90%;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 10px;
+  background: #fff;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #bebebe;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.list-section {
+  margin-top: 50px;
+}
+.my-row .btn text {
+  font-size: 16px;
+}

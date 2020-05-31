@@ -1,18 +1,25 @@
 // pages/main.js
+const app = getApp()
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    active: 1
+    active: 1,
+    modalName: '',
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+    const that = this;
+    wx.getStorage({
+      key: 'userinfo',
+      success: function(res) {
+      },
+      fail: function(err) {
+        console.log(err)
+        that.setData({
+          modalName: "DialogModal1"
+        })
+      }
+    })
   },
   setActive(e) {
     let active = e.currentTarget.dataset.active;
@@ -22,7 +29,26 @@ Page({
   },
   goSH() {
     wx.navigateTo({
-      url: '/homePage/shortage/shortage',
+      url: '/pages/search/search'
+      // url: '/homePage/shortage/shortage',
     })
+  },
+  hideModal() {
+    this.setData({
+      modalName:''
+    })
+  },
+  getUserInfo(e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    wx.setStorage({
+      key: 'userinfo',
+      data: e.detail.userInfo
+    })
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
+    this.hideModal();
   }
 })

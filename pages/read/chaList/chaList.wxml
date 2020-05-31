@@ -11,10 +11,10 @@
     <view class="weui-cell__bd">{{item.title}}</view>
   </view> -->
   <view class="cu-list menu  margin-bottom-xl shadow-lg">
-    <view class="cu-item" wx:for="{{chapters}}" wx:key="{{index}}" data-index="{{index}}" bindtap='change'>
+    <view class="cu-item" wx:for="{{chapters}}" wx:key="index" data-index="{{index}}" bindtap='change'>
       <view class="content">
         <!-- <text class="icon-github text-grey"></text> -->
-        <text class="text-black">{{item.title}}</text>
+        <text class="text-black">{{item.name}}</text>
       </view>
     </view>
   </view>

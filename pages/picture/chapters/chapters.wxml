@@ -1,0 +1,25 @@
+<!--pages/picture/chapters/chapters.wxml-->
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <cu-custom bgColor="bg-gradual-red" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">{{bookInfo.bookName}}</view>
+  </cu-custom>
+</view>
+<view class='header'>
+   <text>共{{bookInfo.chapters.length}}章</text>
+   <text bindtap='reverse'>倒序</text>
+</view>
+<view class="section">
+  <view class="cu-list menu  margin-bottom-xl shadow-lg">
+    <view class="cu-item" wx:for="{{bookInfo.chapters}}" wx:key="{{index}}" data-index="{{index}}" bindtap='change'>
+      <view class="content">
+        <!-- <text class="icon-github text-grey"></text> -->
+        <text class="text-black">{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <image src='/lib/images/bg_wsc.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
+</view>

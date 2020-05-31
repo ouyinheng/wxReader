@@ -1,0 +1,11 @@
+<!--pages/picture/details/details.wxml-->
+<cu-custom bgColor="bg-red" isBack="{{true}}">
+  <view slot="content">Picture</view>
+</cu-custom>
+<view class="cu-card case" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="index" bindtap='previewimgs' data-index="{{index}}" bindlongpress="downPic">
+    <view class="cu-item shadow">
+      <view class="image">
+        <image src="http://hbimg.huabanimg.com/{{item.file.key}}" mode="widthFix" lazy-load="{{true}}"></image>
+      </view>
+    </view>
+  </view>

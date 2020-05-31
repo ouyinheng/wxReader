@@ -3,7 +3,5 @@
     "navigationStyle": "custom"
   },
   "usingComponents": {
-    "scroll": "/components/scroll/scroll",
-    "o-list": "/components/list/list"
   }
 }

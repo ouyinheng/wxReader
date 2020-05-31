@@ -2,6 +2,7 @@
   "usingComponents": {
     "book-rack": "/homePage/bookrack/bookrack",
     "rank-list": "/homePage/ranklist/ranklist",
-    "class-ify": "/homePage/classify/classify"
+    "class-ify": "/homePage/classify/classify",
+    "mine": "/homePage/mine/mine"
   }
 }

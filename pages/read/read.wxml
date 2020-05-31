@@ -4,24 +4,16 @@
 </cu-custom>
 <view class='section' style="background:{{style.background}};color:{{style.color}}">
   <view class='content' bindtap='showOp'>
-    <view wx:for="{{content}}" wx:key="{{index}}" class='content-sm'>
-      <view class='title' style="font-size: 18px;padding: 20px 0;">{{title[index]}}</view>
-      <view wx:for="{{item}}" wx:key="{{index}}" style="font-size:{{style.fontSize}}px">
-        <text>{{item}}。</text>
+    <view class='title' style="font-size: 18px;padding: 20px 0;">{{title}}</view>
+    <view wx:for="{{content}}" wx:key="index" class='content-sm'>
+      <view style="font-size:{{style.fontSize}}px">
+        <text>{{item}}</text>
       </view>
     </view>
   </view>
 </view>
 
 <view class='footer' style="background:{{style.background}};color:{{style.color}}">
-  <!-- <view class="my-slide page__bd page__bd_spacing" wx:if="{{!showSetup}}">
-    <slider show-value value="{{pro}}" />
-  </view> -->
-    <!-- 
-    <view class='btn' bindtap='setCache'>
-      <text class='icon-order'></text>
-      <text>下载</text>
-    </view> -->
   <view class='btn'  wx:if="{{showSetup}}">
     <text class='text-black' bindtap='addSize'>Aa+</text>
   </view>
@@ -29,16 +21,16 @@
     <text class='text-black' bindtap='delSize'>Aa-</text>
   </view>
   <view class='btn' bindtap='goBack' wx:if="{{!showSetup}}">
-    <text class='icon-back'></text>
+    <text class='cuIcon-back'></text>
   </view>
   <view class='btn' bindtap='showCatalog' wx:if="{{!showSetup}}">
-    <text class='icon-sort'></text>
+    <text class='cuIcon-sort'></text>
   </view>
   <view class='btn' bindtap='tonight' wx:if="{{!showSetup}}">
-    <text class='icon-attention'></text>
+    <text class='cuIcon-attention'></text>
   </view>
   <view class='btn' bindtap='showSetup'>
-    <text class='icon-settings'></text>
+    <text class='cuIcon-settings'></text>
   </view>
 </view>
 <view class='cu-load load-modal' wx:if="{{loading}}">

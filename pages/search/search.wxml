@@ -1,30 +1,57 @@
-<view class="cu-custom" style="height:{{CustomBar}}px;">
-  <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
-    <view slot="backText">返回</view>
-    <view slot="content">导航栏</view>
-  </cu-custom>
+<view class="page-group">
+    <view class="cu-custom" style="height:{{CustomBar}}px;">
+        <cu-custom bgColor="bg-gradual-red" isBack="{{true}}">
+            <view slot="backText">返回</view>
+            <view slot="content">搜索</view>
+        </cu-custom>
+    </view>
+    <view class="header">
+        <!-- <input class="input" maxlength="20" type="text" value="{{searchValue}}" bindinput="inputTyping" placeholder="请输入关键词"></input> -->
+        <view class="cu-bar w-100 search bg-white">
+            <view class="search-form round">
+                <text class="cuIcon-search"></text>
+                <input type="text" maxlength="20" placeholder="请输入关键词" confirm-type="search" value="{{searchValue}}" bindinput="inputTyping"></input>
+            </view>
+            <view class="action">
+                <button class="cu-btn bg-green shadow-blur round" bindtap="searchbooks" data-item="{{searchValue}}">搜索</button>
+            </view>
+        </view>
+    </view>
+    <view class="history" wx:if="{{list.length==0&&auto.length==0}}">
+        <view class="title">搜索历史</view>
+        <view class="cu-list menu">
+            <view class="cu-item" wx:for="{{history}}" wx:item="{{item}}" wx:index="{{index}}" wx:key="index" bindlongpress="del" bindtap="searchbooks" data-item="{{item}}" data-id="{{index}}">
+                <view class='flex-between'>
+                    <view class="content">
+                        <text class="text-grey">{{index+1}}</text>
+                        <text class="text-black">{{item}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="section" wx:if="{{auto.length>0||list.length>0}}">
+        <view wx:if="{{list.length==0}}">
+            <view class="his-item p-2" wx:for="{{auto}}" wx:item="{{item}}" wx:index="{{index}}" wx:key="index" bindtap="searchbooks" data-item="{{item}}">
+                {{item}}
+            </view>
+        </view>
+        <view wx:if="{{list.length>0}}" class="cu-list menu-avatar">
+            <view class="cu-item" wx:for="{{list}}" wx:item="{{item}}" wx:index="{{index}}" wx:key="index" bindtap='toRead' data-id='{{item.link}}'>
+                <!-- <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big2100{{index+1}}.jpg);"></view> -->
+                <view class="content">
+                    <view class="text-grey">{{item.title}}</view>
+                    <view class="text-gray text-sm">
+                        <text class="text-red"></text>
+                        {{item.author}}
+                    </view>
+                </view>
+                <view class="action">
+                    <view class="text-grey text-xs">{{item.tag}}</view>
+                    <!-- <view class="cu-tag round bg-grey sm">5</view> -->
+                </view>
+            </view>
+            <view class="cu-tabbar-height"></view>
+        </view>
+    </view>
 </view>
-
-<!-- <view class="page-group">
-  <view class="header">
-    <input class="input" maxlength="20" type="text" value="{{searchValue}}"  bindinput="inputTyping" placeholder="请输入关键词"></input>
-    <view class="btn" bindtap="searchbook">搜索</view>
-  </view>
-  <view class="history">
-    <view class="title">搜索历史</view>
-    <view>
-      <view class="his-item" wx:for="{{history}}" wx:item="{{item}}" wx:index="{{index}}" wx:key="{{index}}" bindlongpress="del" bindtap="searchbooks" data-item="{{item}}" data-id="{{index}}">{{item}}</view>
-    </view>
-  </view>
-  <view class="section" wx:if="{{auto.length>0||list.length>0}}">
-    <view wx:if="{{list.length==0}}">
-      <view class="his-item" wx:for="{{auto}}" wx:item="{{item}}" wx:index="{{index}}" wx:key="{{index}}" bindtap="searchbooks" data-item="{{item}}">{{item}}</view>
-    </view>
-    <view wx:if="{{list.length>0}}">
-      <o-list wx:for="{{list}}" wx:key="{{index}}" wx:item="{{item}}" list="{{item}}" bindtoRead="toRead" data-id="{{item._id}}"></o-list>
-      <view class="btn-group">
-        <view class="btn" bindtap="getListData">loadmore</view>
-      </view>
-    </view>
-  </view>
-</view> -->

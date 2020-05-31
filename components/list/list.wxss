@@ -25,15 +25,11 @@
   color: #909399;
   margin-top: 2px;
 }
-.cu-bar .content image{
-  height: 60rpx;
-  width: 240rpx;
-}
 .bg-img {
   display: flex!important;
   padding: 10px;
 }
-.bg-img image{
+.bg-img .image{
   width: 150rpx;
   height: 200rpx;
 }

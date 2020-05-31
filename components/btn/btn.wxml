@@ -1,7 +1,0 @@
-<!--components/btn/btn.wxml-->
-<view class='outbtn'>
-  <view class='loadmore' bindtap='loadmore'>
-    <text class='iconfont icon-jiazaigengduoicon '></text>
-    <text>加载更多</text>
-  </view>
-</view>

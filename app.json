@@ -1,23 +1,31 @@
 {
   "pages": [
+    "pages/search/search",
     "pages/main",
     "pages/details/details",
     "pages/read/read",
-    "pages/search/search",
     "pages/read/chaList/chaList",
     "pages/reader/reader",
     "homePage/classify/details/details",
     "homePage/shortage/shortage",
     "homePage/reader/reader",
-    "homePage/reader/chapter/chapter"
+    "homePage/reader/chapter/chapter",
+    "pages/picture/picture",
+    "pages/flower/flower",
+    "pages/flower/details/details",
+    "pages/picture/chapters/chapters"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "white",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTextStyle": "white",
     "navigationStyle": "custom"
   },
   "usingComponents": {
-    "cu-custom": "/style/colorui/components/cu-custom"
-  }
+    "cu-custom": "/style/colorui/components/cu-custom",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  },
+  "sitemapLocation": "sitemap.json"
 }

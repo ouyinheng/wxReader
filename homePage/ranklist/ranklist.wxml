@@ -3,13 +3,13 @@
     <view slot="content">排行榜</view>
   </cu-custom>			
   <view class='text-center'>
-    <view class="open bg-red icon-settingsfill" bindtap="showModal" data-target="viewModal"></view>
+    <view class="open bg-red cuIcon-settingsfill" bindtap="showModal" data-target="viewModal"></view>
   </view>
   <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
     <view class="cu-item" wx:for="{{bookList}}" data-id="{{index}}" wx:key="{{index}}" bindtap='toRead' data-id="{{item._id}}">
       <view class='flex-between'>
         <view class="content">
-          <text class="icon-github text-grey"></text>
+          <text class="cuIcon-github text-grey"></text>
           <text class="text-black">{{item.title}}</text>
         </view>
         <view class="cu-tag round {{index%3==0?'bg-blue':index%3==1?'bg-orange':index%3==2?'bg-red':'bg-olive'}} light">{{item.majorCate}}</view>
@@ -19,7 +19,7 @@
   </view>
 </scroll-view>
 <view class="DrawerClose {{modalName=='viewModal'?'show':''}}" bindtap="hideModal">
-  <text class="icon-pullright"></text>
+  <text class="cuIcon-pullright"></text>
 </view>
 <scroll-view scroll-y class="DrawerWindow {{modalName=='viewModal'?'show':''}}">
   <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
@@ -27,7 +27,7 @@
     <view class="cu-item" wx:for="{{ranklist[clslist[btactive].eg]}}" wx:item="{{item}}" wx:index="{{index}}" wx:key="{{index}}" data-index="{{index}}" data-id="{{item._id}}" bindtap="setRankActive">
       <view class='flex-between'>
         <view class="content">
-          <text class="icon-github text-grey"></text>
+          <text class="cuIcon-github text-grey"></text>
           <text class="text-black">{{item.title}}</text>
         </view>
         <view class="cu-tag round bg-red" wx:if="{{rankactive==index}}">{{index}}</view>

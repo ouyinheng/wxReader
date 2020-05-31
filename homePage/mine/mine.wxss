@@ -1,0 +1,11 @@
+.center {
+  align-items: center;
+  background-color: white;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  
+}

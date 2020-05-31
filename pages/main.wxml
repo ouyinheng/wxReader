@@ -3,24 +3,37 @@
   <book-rack wx:if="{{active==1}}"></book-rack>
   <rank-list wx:if="{{active==2}}"></rank-list>
   <class-ify wx:if="{{active==3}}"></class-ify>
+  <mine wx:if="{{active==4}}"></mine>
 </view>
 <view class="cu-bar tabbar bg-white">
   <view class="action {{active==1?'text-red':'text-gray'}}" bindtap='setActive' data-active='1'>
-    <view class="icon-homefill"></view> 首页
+    <view class="cuIcon-homefill"></view> 首页
   </view>
   <view class="action {{active==2?'text-red':'text-gray'}}" bindtap='setActive' data-active='2'>
-    <view class="icon-rankfill"></view> 排行榜
+    <view class="cuIcon-rankfill"></view> 排行榜
   </view>
-  <view class="action text-gray add-action" bindtap='goSH'>
-    <button class="cu-btn icon-discover bg-red shadow"></button>
-    书荒
-  </view>
+   <view class="action text-gray add-action" bindtap='goSH'>
+      <button class="cu-btn cuIcon-discover bg-red shadow"></button>
+      书荒
+    </view>
   <view class="action {{active==3?'text-red':'text-gray'}}" bindtap='setActive' data-active='3'>
-    <view class="icon-circlefill"></view>
+    <view class="cuIcon-circlefill"></view>
     分类
   </view>
   <view class="action {{active==4?'text-red':'text-gray'}}" bindtap='setActive' data-active='4'>
-    <view class="icon-myfill"></view>
+    <view class="cuIcon-myfill"></view>
     我的
+  </view>
+</view>
+<!-- 模态框 -->
+<view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="padding-xl">
+      请授权登录，获取用户名和头像
+    </view>
+    <view class="action padding">
+        <button class="cu-btn line-green text-green" bindtap="hideModal">取消</button>
+        <button class="cu-btn bg-green margin-left" open-type="getUserInfo" bindgetuserinfo="getUserInfo">确定</button>
+    </view>
   </view>
 </view>

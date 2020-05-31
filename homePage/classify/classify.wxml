@@ -3,10 +3,10 @@
 </cu-custom>
 <view class="cls-group">
   <view class="left-title">
-    <view class="{{active=='male'?'text-red':''}}" bindtap="setActive" data-id="male">男生</view>
-    <view class="{{active=='female'?'text-red':''}}" bindtap="setActive" data-id="female">女生</view>
-    <view class="{{active=='press'?'text-red':''}}" bindtap="setActive" data-id="press">出版</view>
-    <view class="{{active=='picture'?'text-red':''}}" bindtap="setActive" data-id="picture">漫画</view>
+    <view class="view {{active=='male'?'text-red':''}}" bindtap="setActive" data-id="male">男生</view>
+    <view class="view {{active=='female'?'text-red':''}}" bindtap="setActive" data-id="female">女生</view>
+    <view class="view {{active=='press'?'text-red':''}}" bindtap="setActive" data-id="press">出版</view>
+    <view class="view {{active=='picture'?'text-red':''}}" bindtap="setActive" data-id="picture">漫画</view>
   </view>
   <view class="cls-right">
     <view class="title">{{gender[active]}}</view>
@@ -18,7 +18,7 @@
             <view class="margin-top-sm text-Abc">{{item.bookCount}}</view>
           </view>
           <view class="cover">
-            <image src="https://statics.zhuishushenqi.com{{item.bookCover[0]}}"></image>
+            <image class="image" src="https://statics.zhuishushenqi.com{{item.bookCover[0]}}"></image>
           </view>
         </view>
       </view>

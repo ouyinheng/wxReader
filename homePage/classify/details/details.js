@@ -5,7 +5,7 @@ Page({
     booklist: [],
     param: '',
     bool: true,
-    page: 0,
+    page: 1,
     limit: 10,
     isLoadmore: false,
     hasnext: true,
@@ -15,7 +15,8 @@ Page({
   onLoad: function (options) {
     console.log(options)
     this.setData({
-      param: options.param
+      param: options.param,
+      gender: options.cls,
     })
     this.loadmore();
   },
@@ -29,7 +30,7 @@ Page({
       loading: true
     })
     if (this.data.hasnext) {
-      let url = `https://api.zhuishushenqi.com/book/by-categories?gender=male&type=hot&major=${param}&minor=&start=${page}&limit=10`;
+      let url = `https://api.zhuishushenqi.com/book/by-categories?gender=${this.data.gender}&type=hot&major=${param}&minor=&start=${page}&limit=10`;
       wx.request({
         url: url,
         success: function (res) {

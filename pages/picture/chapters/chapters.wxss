@@ -1,0 +1,26 @@
+.header {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background: #fff;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #bebebe;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+.section {
+  /* margin-top: 50px; */
+  width: 100%;
+  position: absolute;
+  top: 100px;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+}
+.weui-cell__bd {
+  font-size: 13px;
+}

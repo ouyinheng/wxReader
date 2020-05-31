@@ -36,11 +36,17 @@ Component({
       })
     },
     toRead(e) {
-      console.log(e.currentTarget.dataset.id)
       let id = e.currentTarget.dataset.id;
+      let contentType = e.currentTarget.dataset.type;
+      let url;
+      if (contentType == 'picture') {
+        url = '/pages/picture/picture?id=' + id
+      } else {
+        url = '/pages/read/read?id=' + id
+      }
       wx.navigateTo({
-        url: '/pages/read/read?id=' + id
-      })
+        url
+      });
     },
     // 删除书籍
     delBook(e) {

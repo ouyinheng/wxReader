@@ -1,0 +1,34 @@
+<!--pages/picture/picture.wxml-->
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <cu-custom bgColor="bg-gradual-red" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">{{bookInfo.bookName}}</view>
+  </cu-custom>
+</view>
+<view class='contents'>
+  <view class="cu-card case" wx:for="{{content.imgs}}" wx:item="{{item}}" wx:index="{{index}}" wx:key="{{index}}">
+    <view class="cu-item">
+      <view class="image">
+        <image src="{{item}}" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <image src='/lib/images/bg_wsc.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
+</view>
+<view class='footer' style="background:{{style.background}};color:{{style.color}}">
+  <view class='btn' bindtap='prev'>
+    <text class='icon-back'></text>
+  </view>
+  <view class='btn' bindtap='toChapters'>
+    <text class='icon-sort'></text>
+  </view>
+  <!-- <view class='btn' bindtap='tonight'>
+    <text class='icon-attention'></text>
+  </view> -->
+  <view class='btn' bindtap="next">
+    <text class='icon-right'></text>
+  </view>
+</view>

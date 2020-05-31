@@ -1,92 +1,57 @@
 <cu-custom bgColor="bg-red" isBack="{{true}}">
-  <view slot="backText">返回</view>
-  <view slot="content">详情</view>
+    <view slot="backText">返回</view>
+    <view slot="content">详情</view>
 </cu-custom>
 <view class='details'>
-  <view class='header'>
-    <view class='left'>
-       <image style="width: 150rpx;height: 200rpx; background-color: #eeeeee;" mode="{{item.mode}}" src="https://statics.zhuishushenqi.com{{detail.cover}}"></image>
-    </view>
-    <view class='right'>
-      <text class='title'>{{detail.title}}</text>
-      <view class='title-sm'>
-        <text style="color: red;">{{detail.author}} </text>
-        <text> | </text>
-        <text> {{detail.majorCate}}</text>
-      </view>
-       <view class='title-sm'>
-        <text>{{detail.wordCount}}字 </text>
-      </view>
-    </view>
-  </view>
-  <view class='introduce'>
-    <view class="flex text-center text-grey bg-white" style="width:100%;margin: 10px 0;">
-      <view class="flex flex-sub flex-direction solid-right">
-        <view class="text-grey">追书人气</view>
-        <view class="margin-top-sm text-red">{{detail.latelyFollower}}</view>
-      </view>
-        <view class="flex flex-sub flex-direction solid-right">
-        <view class="text-grey">读者留存</view>
-        <view class="margin-top-sm text-red">{{detail.retentionRatio}}%</view>
-      </view>
-        <view class="flex flex-sub flex-direction solid-right">
-        <view class="text-grey">社区帖子</view>
-        <view class="margin-top-sm text-red">{{detail.postCount}}</view>
-      </view>
-        <view class="flex flex-sub flex-direction solid-right">
-        <view class="text-grey">日更新字</view>
-        <view class="margin-top-sm text-red">{{detail.serializeWordCount}}</view>
-      </view>
-    </view>
-  </view>
-  <view class='longIntro'>
-    <text class='title'>简介</text>
-    <text class='content'>{{detail.longIntro}}</text>
-  </view>
-  <view class="cu-bar bg-white solid-bottom {{isCard?'margin-top':''}}">
-    <view class='action'>
-      <text class='icon-titles text-orange '></text> 评论区
-    </view>
-  </view>
-  <view class="cu-card dynamic {{false?'no-card':''}}" wx:for="{{discussList}}" wx:item="{{item}}" wx:index="{{index}}" wx:key="{{index}}">
-    <view class="cu-list menu-avatar comment solids-top">
-      <view class="cu-item">
-        <view class="cu-avatar round" style="background-image:url(https://statics.zhuishushenqi.com{{item.author.avatar}});"></view>
-        <view class="content">
-          <view class="text-grey">{{item.author.nickname}}</view>
-          <view class="text-gray text-content text-df">
-            {{item.title}}
-          </view>
-          <view class="margin-top-sm flex justify-between">
-            <view class="text-gray text-df">{{item.updated}}</view>
-            <view>
-              <text class="icon-appreciatefill text-red"></text>{{item.likeCount}}
-              <text class="icon-messagefill text-gray margin-left-sm"></text>{{item.commentCount}}
-            </view>
-          </view>
+    <view class='header'>
+        <view class='left'>
+            <image style="width: 150rpx;height: 200rpx; background-color: #eeeeee;" mode="{{item.mode}}" src="{{detail.cover}}"></image>
         </view>
-      </view>
+        <view class='right'>
+            <text class='title'>{{detail.title}}</text>
+            <view class='title-sm'>
+                <text style="color: red;">{{detail.author}}</text>
+                <text>|</text>
+                <text>{{detail.majorCate}}</text>
+            </view>
+            <view class='title-sm'>
+                <text>{{detail.wordCount}}字</text>
+            </view>
+        </view>
     </view>
-  </view>
-  <!-- 加载更多评论 -->
-  <view class='flex-center'>
-    <button class="cu-btn bg-red" wx:if="{{!loaddis}}" bindtap='loadmore'>加载</button>
-    <text class="icon-loading2 iconfont-spin text-red" wx:if="{{loaddis}}"></text>
-  </view>
-  <view class='footer'>
-    <!-- <view class='btn' bindtap='addReadRack'>
-      <text class='iconfont icon-add addbook'></text>
-      <text>{{isAdd?'已加入': '加入书架'}}</text>
-    </view>  -->
-    <button class="btn cu-btn lg" disabled="{{isAdd}}" bindtap='addReadRack'>{{isAdd?'已加入': '加入书架'}}</button>
-    <button class="btn cu-btn bg-red lg" bindtap='toRead'>立即阅读</button>
-    <!-- <view class='btn' bindtap='toRead'>
-      <text class='read'>立即阅读</text>
-    </view> -->
-  </view>
+    <view class='introduce' wx:if="{{false}}">
+        <view class="flex text-center text-grey bg-white" style="width:100%;margin: 10px 0;">
+            <view class="flex flex-sub flex-direction solid-right">
+                <view class="text-grey">追书人气</view>
+                <view class="margin-top-sm text-red">{{detail.latelyFollower}}</view>
+            </view>
+            <view class="flex flex-sub flex-direction solid-right">
+                <view class="text-grey">读者留存</view>
+                <view class="margin-top-sm text-red">{{detail.retentionRatio}}%</view>
+            </view>
+            <view class="flex flex-sub flex-direction solid-right">
+                <view class="text-grey">社区帖子</view>
+                <view class="margin-top-sm text-red">{{detail.postCount}}</view>
+            </view>
+            <view class="flex flex-sub flex-direction solid-right">
+                <view class="text-grey">日更新字</view>
+                <view class="margin-top-sm text-red">{{detail.serializeWordCount}}</view>
+            </view>
+        </view>
+    </view>
+    <view class='longIntro'>
+        <text class='title'>简介</text>
+        <text class='content'>{{detail.longIntro}}</text>
+    </view>
+    <view class='footer'>
+        <button class="btn cu-btn lg" disabled="{{isAdd}}" bindtap='addReadRack'>
+            {{isAdd?'已加入': '加入书架'}}
+        </button>
+        <button class="btn cu-btn bg-red lg" bindtap='toRead'>立即阅读</button>
+    </view>
 </view>
 <view class="cu-tabbar-height"></view>
 <view class='cu-load load-modal' wx:if="{{loading}}">
-  <image src='/lib/images/bg_wsc.png' class='png' mode='aspectFit'></image>
-  <view class='gray-text'>加载中...</view>
+    <image src='/lib/images/bg_wsc.png' class='png' mode='aspectFit'></image>
+    <view class='gray-text'>加载中...</view>
 </view>

@@ -14,7 +14,7 @@
   height: 100%;
   border-right: 1rpx solid gainsboro;
 }
-.left-title view {
+.left-title .view {
   text-align: center;
   font-size: 30rpx;
   padding: 5px 0;
@@ -70,7 +70,7 @@
   display: flex;
   justify-content: space-around;
 }
-.card .cover image {
+.card .cover .image {
   width: 45px;
   height: 60px;
 }

@@ -1,0 +1,42 @@
+<scroll-view scroll-y class="scrollPage">
+  <cu-custom bgColor="bg-red" isBack="{{false}}">
+    <view slot="content">我的</view>
+  </cu-custom>
+  <view class="flex center">
+    <view class="cu-avatar round lg margin-left" style="background-image:url({{userinfo.avatarUrl}});">
+      <view class="cu-tag badge {{userinfo.gender==1?'icon-male bg-blue':'icon-female bg-pink'}}"></view>
+    </view>
+    <view class='padding column'>
+      <view style="font-size: 14px;">{{userinfo.nickName}}</view>
+      <view style="color: #aaa;">{{userinfo.country}}.{{userinfo.province}}.{{userinfo.city}}</view>
+    </view>
+    <view></view>
+  </view>
+  <view class="cu-list menu radius sm-border">
+    <view class="cu-item">
+     <view class="content" bindtap="CopyLink">
+        <text class="cuIcon-github text-grey"></text>
+        <text class="text-grey">图片</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content" bindtap="showQrcode">
+        <text class="icon-appreciatefill text-red"></text>
+        <text class="text-grey">赞赏支持</text>
+      </view>
+    </view>
+    <view class="cu-item ">
+      <view class="content">
+        <text class="icon-writefill text-cyan"></text>
+        <text class="text-grey">意见反馈</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content" bindtap='clearStorage'>
+        <text class="icon-creativefill text-orange"></text>
+        <text class="text-grey">清空缓存</text>
+      </view>
+    </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

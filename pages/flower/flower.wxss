@@ -1,0 +1,24 @@
+/* pages/picture/picture.wxss */
+.scrollPage {
+	width: 100vw;
+	height: 100vh;
+
+}
+.img-list {
+	width: 100vw;
+	height: 100%;
+}
+.list-container {
+	display: flex;
+
+}
+.img-list-group {
+	width: 100%;
+}
+.font-sm {
+	font-size: 18rpx;
+}
+.cu-card {
+	/* width: 48 */
+	z-index: 10;
+}

@@ -1,0 +1,57 @@
+<!--pages/picture/picture.wxml-->
+<scroll-view scroll-y class="scrollPage">
+	<cu-custom bgColor="bg-red" isBack="{{true}}">
+		<view slot="content">Picture</view>
+	</cu-custom>
+	<view class="img-list">
+		<view class="list-container">
+			<view class="img-list-group">
+				<view class="cu-card case" wx:for="{{firstList}}" wx:for-index="index" wx:for-item="item" wx:key="index" wx:if="{{index%2 == 0}}" bindtap="toDetails" data-pin_id="{{item.pin_id}}">
+					<view class="cu-item shadow">
+						<view class="image">
+							<image src="https://hbimg.huabanimg.com/{{item.file.key}}" mode="widthFix" lazy-load="{{true}}"></image>
+							<view class="cu-tag bg-blue">{{item.board.title}}</view>
+							<view class="cu-bar bg-shadeBottom">
+								<text class="text-cut">{{item.raw_text}}</text>
+							</view>
+						</view>
+						<view class="cu-list menu-avatar">
+							<view class="cu-item">
+								<view class="cu-avatar round lg" style="background-image:url(http://hbimg.huabanimg.com/{{item.file.key}});"></view>
+								<view class="content flex-sub">
+								<view class="text-grey font-sm">{{item.user.username}}</view>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="img-list-group">
+				<view class="cu-card case" wx:for="{{secondList}}" wx:for-index="index" wx:for-item="item" wx:key="index" wx:if="{{index%2 != 0}}" bindtap="toDetails" data-pin_id="{{item.pin_id}}">
+					<view class="cu-item shadow">
+						<view class="image">
+							<image src="http://hbimg.huabanimg.com/{{item.file.key}}" mode="widthFix" lazy-load="{{true}}"></image>
+							<view class="cu-tag bg-blue">{{item.board.title}}</view>
+							<view class="cu-bar bg-shadeBottom">
+								<text class="text-cut">{{item.raw_text}}</text>
+							</view>
+						</view>
+						<view class="cu-list menu-avatar">
+							<view class="cu-item">
+								<view class="cu-avatar round lg" style="background-image:url(http://hbimg.huabanimg.com/{{item.file.key}});"></view>
+								<view class="content flex-sub">
+								<view class="text-grey font-sm">{{item.user.username}}</view>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<button bindtap="loadMore" wx:if="{{hasMore}}">load</button>
+	</view>
+</scroll-view>
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <image src='/lib/images/bg_wsc.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
+</view>

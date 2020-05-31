@@ -11,7 +11,7 @@
 </view> -->
 <view class="cu-card" bindtap="toRead">
   <view class="cu-item bg-img shadow-blur">
-    <image src='https://statics.zhuishushenqi.com{{list.cover}}'></image>
+    <image class="image" src='https://statics.zhuishushenqi.com{{list.cover}}'></image>
     <view class='ml-2'>
       <view class="cardTitle">{{list.title}}</view>
       <view class="cardAuthor" style="color:#a5673f;">{{list.author}}</view>

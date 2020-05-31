@@ -1,4 +1,1 @@
 /* colorui/components/cu-custom.wxss */
-.cu-bar {
-  transition: all .7s;
-}

@@ -10,7 +10,7 @@
   </view>
   <!-- 书籍列表 -->
   <view>
-    <view class="cu-card" wx:if="{{!noBook}}" wx:for="{{bookList}}" wx:item="{{item}}" wx:key="{{index}}" data-id="{{item._id}}" data-index='{{index}}' bindlongpress='delBook' bindtap='toRead'>
+    <view class="cu-card" wx:if="{{!noBook}}" wx:for="{{bookList}}" wx:item="{{item}}" wx:key="index" data-id="{{item._id}}" data-index='{{index}}' bindlongpress='delBook' bindtap='toRead' data-type="{{item.contentType}}">
       <view class="cu-item bg-img shadow-blur">
         <image class="images" src='https://statics.zhuishushenqi.com{{item.cover}}'></image>
         <view class='ml-2'>
